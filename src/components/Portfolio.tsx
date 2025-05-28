@@ -1,8 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
-import { ExternalLink, Github, X, Calendar, Users, Award } from 'lucide-react';
+import { ExternalLink, Github, Calendar, Users, Award } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
+import { Link } from 'react-router-dom';
 
-const Portfolio = () => {
+interface PortfolioProps {
+  isHomePage?: boolean;
+}
+
+const Portfolio = ({ isHomePage = false }: PortfolioProps) => {
   const sectionRef = useRef<HTMLElement>(null);
   const [selectedProject, setSelectedProject] = useState<any>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -61,34 +66,6 @@ const Portfolio = () => {
       githubUrl: "https://github.com/example/ecommerce"
     },
     {
-      title: "Brand Identity Design",
-      category: "Branding",
-      description: "Complete brand identity redesign for a tech startup including logo, guidelines, and marketing materials.",
-      image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      additionalImages: [
-        "https://images.unsplash.com/photo-1524749292158-7540c2494485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-      ],
-      technologies: ["Illustrator", "Photoshop", "Figma"],
-      featured: false,
-      fullDescription: "A complete brand transformation for InnovateTech, a emerging AI startup. The project encompassed logo design, brand guidelines, marketing collateral, and digital presence.",
-      features: [
-        "Modern logo design with multiple variations",
-        "Comprehensive brand guidelines",
-        "Business card and letterhead design",
-        "Social media templates",
-        "Website mockups",
-        "Brand voice and messaging"
-      ],
-      duration: "3 months",
-      teamSize: "3 designers",
-      client: "InnovateTech",
-      challenges: "Creating a brand identity that conveys trust and innovation while remaining approachable to diverse audiences.",
-      results: "Brand recognition increased by 85% and helped secure $2M in Series A funding.",
-      liveUrl: "https://example-brand.com",
-      githubUrl: null
-    },
-    {
       title: "Mobile Banking App",
       category: "Mobile Development",
       description: "Secure and intuitive mobile banking application with biometric authentication and real-time transactions.",
@@ -115,6 +92,62 @@ const Portfolio = () => {
       results: "App Store rating of 4.8/5 and 200% increase in mobile transaction volume.",
       liveUrl: "https://securebank-app.com",
       githubUrl: "https://github.com/example/banking-app"
+    },
+    {
+      title: "Fitness Tracking App",
+      category: "Mobile Development",
+      description: "Comprehensive fitness app with workout tracking, nutrition planning, and social features.",
+      image: "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      additionalImages: [
+        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1594737625785-a6cbdabd333c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      ],
+      technologies: ["Swift", "Kotlin", "Firebase"],
+      featured: true,
+      fullDescription: "FitLife Pro empowers users to achieve their fitness goals through comprehensive tracking, personalized workouts, and community support.",
+      features: [
+        "Personalized workout plans",
+        "Nutrition tracking and meal planning",
+        "Progress photos and measurements",
+        "Social challenges and leaderboards",
+        "Wearable device integration",
+        "AI-powered form analysis"
+      ],
+      duration: "10 months",
+      teamSize: "6 developers",
+      client: "FitLife Technologies",
+      challenges: "Creating accurate fitness tracking algorithms while maintaining long battery life and smooth performance.",
+      results: "500K+ downloads with 4.7/5 rating and 80% user retention rate.",
+      liveUrl: "https://fitlife-pro.com",
+      githubUrl: "https://github.com/example/fitness-app"
+    },
+    {
+      title: "Brand Identity Design",
+      category: "Branding",
+      description: "Complete brand identity redesign for a tech startup including logo, guidelines, and marketing materials.",
+      image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      additionalImages: [
+        "https://images.unsplash.com/photo-1524749292158-7540c2494485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      ],
+      technologies: ["Illustrator", "Photoshop", "Figma"],
+      featured: false,
+      fullDescription: "A complete brand transformation for InnovateTech, a emerging AI startup. The project encompassed logo design, brand guidelines, marketing collateral, and digital presence.",
+      features: [
+        "Modern logo design with multiple variations",
+        "Comprehensive brand guidelines",
+        "Business card and letterhead design",
+        "Social media templates",
+        "Website mockups",
+        "Brand voice and messaging"
+      ],
+      duration: "3 months",
+      teamSize: "3 designers",
+      client: "InnovateTech",
+      challenges: "Creating a brand identity that conveys trust and innovation while remaining approachable to diverse audiences.",
+      results: "Brand recognition increased by 85% and helped secure $2M in Series A funding.",
+      liveUrl: "https://example-brand.com",
+      githubUrl: null
     },
     {
       title: "SaaS Dashboard",
@@ -171,36 +204,10 @@ const Portfolio = () => {
       results: "Online reservations increased by 120% and takeout orders grew by 200%.",
       liveUrl: "https://bellavista-restaurant.com",
       githubUrl: null
-    },
-    {
-      title: "Fitness Tracking App",
-      category: "Mobile Development",
-      description: "Comprehensive fitness app with workout tracking, nutrition planning, and social features.",
-      image: "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      additionalImages: [
-        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1594737625785-a6cbdabd333c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-      ],
-      technologies: ["Swift", "Kotlin", "Firebase"],
-      featured: true,
-      fullDescription: "FitLife Pro empowers users to achieve their fitness goals through comprehensive tracking, personalized workouts, and community support.",
-      features: [
-        "Personalized workout plans",
-        "Nutrition tracking and meal planning",
-        "Progress photos and measurements",
-        "Social challenges and leaderboards",
-        "Wearable device integration",
-        "AI-powered form analysis"
-      ],
-      duration: "10 months",
-      teamSize: "6 developers",
-      client: "FitLife Technologies",
-      challenges: "Creating accurate fitness tracking algorithms while maintaining long battery life and smooth performance.",
-      results: "500K+ downloads with 4.7/5 rating and 80% user retention rate.",
-      liveUrl: "https://fitlife-pro.com",
-      githubUrl: "https://github.com/example/fitness-app"
     }
   ];
+
+  const displayedProjects = isHomePage ? projects.slice(0, 3) : projects;
 
   const openProjectDialog = (project: any) => {
     setSelectedProject(project);
@@ -221,36 +228,41 @@ const Portfolio = () => {
             </div>
             <div className="animate-on-scroll">
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Explore our latest projects and see how we've helped businesses achieve their digital goals.
+                {isHomePage 
+                  ? "Featured projects showcasing our expertise and creativity."
+                  : "Explore our latest projects and see how we've helped businesses achieve their digital goals."
+                }
               </p>
             </div>
           </div>
 
-          {/* Filter Tabs */}
-          <div className="animate-on-scroll flex justify-center mb-12">
-            <div className="flex flex-wrap gap-4 bg-gray-100 p-2 rounded-full">
-              {["All", "Web Development", "Mobile Development", "Branding", "Web Design"].map((filter) => (
-                <button
-                  key={filter}
-                  className={`px-6 py-2 rounded-full transition-all duration-200 ${
-                    filter === "All" 
-                      ? "bg-black text-white" 
-                      : "text-gray-600 hover:text-gray-900 hover:bg-gray-200"
-                  }`}
-                >
-                  {filter}
-                </button>
-              ))}
+          {/* Filter Tabs - Only show on work page */}
+          {!isHomePage && (
+            <div className="animate-on-scroll flex justify-center mb-12">
+              <div className="flex flex-wrap gap-4 bg-gray-100 p-2 rounded-full">
+                {["All", "Web Development", "Mobile Development", "Branding", "Web Design"].map((filter) => (
+                  <button
+                    key={filter}
+                    className={`px-6 py-2 rounded-full transition-all duration-200 ${
+                      filter === "All" 
+                        ? "bg-black text-white" 
+                        : "text-gray-600 hover:text-gray-900 hover:bg-gray-200"
+                    }`}
+                  >
+                    {filter}
+                  </button>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
 
           {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
+            {displayedProjects.map((project, index) => (
               <div 
                 key={index}
                 className={`animate-on-scroll group relative overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 ${
-                  project.featured ? 'md:col-span-2 lg:col-span-1' : ''
+                  project.featured && !isHomePage ? 'md:col-span-2 lg:col-span-1' : ''
                 }`}
               >
                 {/* Project Image */}
@@ -311,14 +323,29 @@ const Portfolio = () => {
           <div className="text-center mt-16">
             <div className="animate-on-scroll">
               <h3 className="text-2xl font-semibold mb-4 font-space">
-                Like what you see?
+                {isHomePage ? "Want to see more?" : "Like what you see?"}
               </h3>
               <p className="text-gray-600 mb-8">
-                Let's work together to create something amazing for your business.
+                {isHomePage 
+                  ? "Check out our complete portfolio to see all our amazing projects."
+                  : "Let's work together to create something amazing for your business."
+                }
               </p>
-              <button className="bg-black text-white px-8 py-4 rounded-full hover:bg-gray-800 transition-all duration-300 transform hover:scale-105">
-                Start Your Project
-              </button>
+              {isHomePage ? (
+                <Link 
+                  to="/work"
+                  className="bg-black text-white px-8 py-4 rounded-full hover:bg-gray-800 transition-all duration-300 transform hover:scale-105"
+                >
+                  View All Projects
+                </Link>
+              ) : (
+                <Link 
+                  to="/contact"
+                  className="bg-black text-white px-8 py-4 rounded-full hover:bg-gray-800 transition-all duration-300 transform hover:scale-105"
+                >
+                  Start Your Project
+                </Link>
+              )}
             </div>
           </div>
         </div>

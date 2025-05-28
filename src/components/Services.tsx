@@ -1,8 +1,13 @@
 
 import { useEffect, useRef } from 'react';
 import { Palette, Code, Smartphone, Megaphone, BarChart3, Shield } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-const Services = () => {
+interface ServicesProps {
+  isHomePage?: boolean;
+}
+
+const Services = ({ isHomePage = false }: ServicesProps) => {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -68,6 +73,8 @@ const Services = () => {
     }
   ];
 
+  const displayedServices = isHomePage ? services.slice(0, 3) : services;
+
   return (
     <section ref={sectionRef} id="services" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -81,14 +88,17 @@ const Services = () => {
           </div>
           <div className="animate-on-scroll">
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              We offer a comprehensive range of digital services to help your business thrive in the modern landscape.
+              {isHomePage 
+                ? "We offer a comprehensive range of digital services to help your business thrive."
+                : "We offer a comprehensive range of digital services to help your business thrive in the modern landscape."
+              }
             </p>
           </div>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
+        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ${isHomePage ? 'lg:grid-cols-3' : ''}`}>
+          {displayedServices.map((service, index) => (
             <div 
               key={index}
               className="animate-on-scroll bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
@@ -105,19 +115,24 @@ const Services = () => {
                 {service.description}
               </p>
               
-              <ul className="space-y-2">
-                {service.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-center text-sm text-gray-500">
-                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3"></div>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
+              {!isHomePage && (
+                <ul className="space-y-2 mb-6">
+                  {service.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-center text-sm text-gray-500">
+                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3"></div>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              )}
               
               <div className="mt-6 pt-6 border-t border-gray-100">
-                <button className="text-black font-medium hover:text-blue-600 transition-colors duration-200 group-hover:underline">
+                <Link 
+                  to="/contact"
+                  className="text-black font-medium hover:text-blue-600 transition-colors duration-200 group-hover:underline"
+                >
                   Learn More →
-                </button>
+                </Link>
               </div>
             </div>
           ))}
@@ -132,9 +147,12 @@ const Services = () => {
             <p className="text-gray-600 mb-8">
               Let's discuss how we can help bring your vision to life.
             </p>
-            <button className="bg-black text-white px-8 py-4 rounded-full hover:bg-gray-800 transition-all duration-300 transform hover:scale-105">
+            <Link 
+              to="/contact"
+              className="bg-black text-white px-8 py-4 rounded-full hover:bg-gray-800 transition-all duration-300 transform hover:scale-105"
+            >
               Get a Free Consultation
-            </button>
+            </Link>
           </div>
         </div>
       </div>

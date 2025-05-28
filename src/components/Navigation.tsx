@@ -1,10 +1,12 @@
 
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,12 +18,19 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Work', href: '#work' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Services', href: '/services' },
+    { name: 'Work', href: '/work' },
+    { name: 'Contact', href: '/contact' },
   ];
+
+  const isActive = (href: string) => {
+    if (href === '/') {
+      return location.pathname === '/';
+    }
+    return location.pathname.startsWith(href);
+  };
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
@@ -30,28 +39,35 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <div className="text-2xl font-bold font-space text-gradient">
+          <Link to="/" className="text-2xl font-bold font-space text-gradient">
             Portfolio
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.href}
-                className="text-gray-700 hover:text-gray-900 transition-colors duration-200 font-medium"
+                to={item.href}
+                className={`transition-colors duration-200 font-medium ${
+                  isActive(item.href) 
+                    ? 'text-gray-900 border-b-2 border-gray-900' 
+                    : 'text-gray-700 hover:text-gray-900'
+                }`}
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </div>
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <button className="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition-colors duration-200">
+            <Link 
+              to="/contact"
+              className="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition-colors duration-200"
+            >
               Get Started
-            </button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -70,18 +86,26 @@ const Navigation = () => {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-white rounded-lg shadow-lg mt-2">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
-                  className="block px-3 py-2 text-gray-700 hover:text-gray-900 transition-colors duration-200"
+                  to={item.href}
+                  className={`block px-3 py-2 transition-colors duration-200 ${
+                    isActive(item.href)
+                      ? 'text-gray-900 bg-gray-100'
+                      : 'text-gray-700 hover:text-gray-900 hover:bg-gray-50'
+                  }`}
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
-              <button className="w-full text-left px-3 py-2 bg-black text-white rounded-md hover:bg-gray-800 transition-colors duration-200">
+              <Link 
+                to="/contact"
+                className="block w-full text-left px-3 py-2 bg-black text-white rounded-md hover:bg-gray-800 transition-colors duration-200"
+                onClick={() => setIsOpen(false)}
+              >
                 Get Started
-              </button>
+              </Link>
             </div>
           </div>
         )}
