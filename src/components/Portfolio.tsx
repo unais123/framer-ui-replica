@@ -37,6 +37,10 @@ const Portfolio = () => {
       category: "Web Development",
       description: "A modern e-commerce platform with advanced filtering, payment integration, and admin dashboard.",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      additionalImages: [
+        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      ],
       technologies: ["React", "Node.js", "MongoDB", "Stripe"],
       featured: true,
       fullDescription: "This comprehensive e-commerce platform revolutionizes online shopping with its intuitive design and powerful features. Built with modern technologies, it offers seamless user experience from product discovery to checkout.",
@@ -61,6 +65,10 @@ const Portfolio = () => {
       category: "Branding",
       description: "Complete brand identity redesign for a tech startup including logo, guidelines, and marketing materials.",
       image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      additionalImages: [
+        "https://images.unsplash.com/photo-1524749292158-7540c2494485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      ],
       technologies: ["Illustrator", "Photoshop", "Figma"],
       featured: false,
       fullDescription: "A complete brand transformation for InnovateTech, a emerging AI startup. The project encompassed logo design, brand guidelines, marketing collateral, and digital presence.",
@@ -85,6 +93,10 @@ const Portfolio = () => {
       category: "Mobile Development",
       description: "Secure and intuitive mobile banking application with biometric authentication and real-time transactions.",
       image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      additionalImages: [
+        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      ],
       technologies: ["React Native", "Firebase", "Node.js"],
       featured: true,
       fullDescription: "SecureBank Mobile revolutionizes mobile banking with cutting-edge security features and an intuitive user interface. Built for both iOS and Android platforms.",
@@ -109,6 +121,10 @@ const Portfolio = () => {
       category: "Web Development",
       description: "Analytics dashboard for SaaS companies with real-time data visualization and reporting features.",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      additionalImages: [
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      ],
       technologies: ["Vue.js", "D3.js", "Python", "PostgreSQL"],
       featured: false,
       fullDescription: "DataInsight Pro is a comprehensive analytics dashboard that helps SaaS companies track KPIs, user engagement, and business metrics in real-time.",
@@ -133,6 +149,10 @@ const Portfolio = () => {
       category: "Web Design",
       description: "Beautiful restaurant website with online ordering, reservation system, and menu management.",
       image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      additionalImages: [
+        "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      ],
       technologies: ["WordPress", "PHP", "MySQL"],
       featured: false,
       fullDescription: "Bella Vista Restaurant's digital transformation with a stunning website that captures the essence of fine dining while providing practical functionality.",
@@ -157,6 +177,10 @@ const Portfolio = () => {
       category: "Mobile Development",
       description: "Comprehensive fitness app with workout tracking, nutrition planning, and social features.",
       image: "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      additionalImages: [
+        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1594737625785-a6cbdabd333c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      ],
       technologies: ["Swift", "Kotlin", "Firebase"],
       featured: true,
       fullDescription: "FitLife Pro empowers users to achieve their fitness goals through comprehensive tracking, personalized workouts, and community support.",
@@ -315,13 +339,25 @@ const Portfolio = () => {
               </DialogHeader>
               
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
-                {/* Project Image */}
+                {/* Project Images */}
                 <div className="space-y-4">
                   <img 
                     src={selectedProject.image} 
                     alt={selectedProject.title}
                     className="w-full h-64 object-cover rounded-lg"
                   />
+                  
+                  {/* Additional Images */}
+                  <div className="grid grid-cols-2 gap-3">
+                    {selectedProject.additionalImages.map((image: string, imageIndex: number) => (
+                      <img 
+                        key={imageIndex}
+                        src={image} 
+                        alt={`${selectedProject.title} - Image ${imageIndex + 2}`}
+                        className="w-full h-32 object-cover rounded-lg hover:scale-105 transition-transform duration-200"
+                      />
+                    ))}
+                  </div>
                   
                   {/* Action Buttons */}
                   <div className="flex gap-3">
