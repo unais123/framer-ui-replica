@@ -1,6 +1,5 @@
-
 import { useEffect, useRef } from 'react';
-import { Palette, Code, Smartphone, Megaphone, BarChart3, Shield } from 'lucide-react';
+import { Palette, Code, Smartphone, Megaphone, BarChart3, Shield, Bot } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface ServicesProps {
@@ -52,6 +51,12 @@ const Services = ({ isHomePage = false }: ServicesProps) => {
       title: "Mobile Apps",
       description: "Developing native and cross-platform mobile applications with exceptional user experiences.",
       features: ["iOS Development", "Android Development", "Cross-platform", "App Store Optimization"]
+    },
+    {
+      icon: <Bot className="w-10 h-10" />,
+      title: "AI Automation",
+      description: "Intelligent automation solutions powered by AI to streamline your business processes and boost efficiency.",
+      features: ["Workflow Automation", "AI Chatbots", "Data Processing", "Smart Analytics"]
     },
     {
       icon: <Megaphone className="w-10 h-10" />,
