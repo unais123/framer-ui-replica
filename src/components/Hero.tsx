@@ -24,7 +24,7 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div className="animate-fade-in">
           {/* Main Heading */}
-          <h1 className="text-4xl md:text-6xl font-bold font-space mb-6 pt-8">
+          <h1 className="text-3xl md:text-6xl font-bold font-space mb-6 pt-8">
             <span className="block">We Create</span>
             <span className="text-gradient inline-block transition-all duration-500 ease-in-out">
               {texts[currentText]}
@@ -33,7 +33,7 @@ const Hero = () => {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
             Transforming ideas into exceptional digital experiences through thoughtful design and cutting-edge technology.
           </p>
 
@@ -60,8 +60,8 @@ const Hero = () => {
               { number: "15+", label: "Awards Won" }
             ].map((stat, index) => (
               <div key={index} className="animate-scale-in" style={{animationDelay: `${index * 0.1}s`}}>
-                <div className="text-2xl md:text-3xl font-bold text-gray-900">{stat.number}</div>
-                <div className="text-sm text-gray-600">{stat.label}</div>
+                <div className="text-xl md:text-3xl font-bold text-gray-900">{stat.number}</div>
+                <div className="text-xs md:text-sm text-gray-600">{stat.label}</div>
               </div>
             ))}
           </div>
