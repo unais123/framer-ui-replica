@@ -24,7 +24,7 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div className="animate-fade-in">
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-7xl font-bold font-space mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold font-space mb-6 pt-8">
             <span className="block">We Create</span>
             <span className="text-gradient inline-block transition-all duration-500 ease-in-out">
               {texts[currentText]}
@@ -33,7 +33,7 @@ const Hero = () => {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
             Transforming ideas into exceptional digital experiences through thoughtful design and cutting-edge technology.
           </p>
 
