@@ -13,8 +13,7 @@ const ServicesPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center animate-fade-in">
             <h1 className="text-5xl md:text-6xl font-bold font-space mb-6">
-              Our
-              <span className="text-gradient block">Services</span>
+              Services
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Comprehensive digital solutions tailored to help your business grow and succeed in the modern landscape.
