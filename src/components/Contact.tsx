@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 
@@ -33,19 +32,19 @@ const Contact = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      content: "hello@portfolio.com",
+      content: "atuaagency@gmail.com",
       description: "Send us an email anytime"
     },
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Phone",
-      content: "+1 (555) 123-4567",
+      content: "+91 8660070620",
       description: "Call us during business hours"
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Office",
-      content: "123 Creative Street, Design City, DC 12345",
+      content: "Mangalore, Karnataka, India",
       description: "Visit our creative studio"
     }
   ];

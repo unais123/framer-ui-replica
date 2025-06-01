@@ -223,7 +223,7 @@ const Portfolio = ({ isHomePage = false }: PortfolioProps) => {
             <div className="animate-on-scroll">
               <h2 className="text-4xl md:text-5xl font-bold font-space mb-6">
                 Our
-                <span className="text-gradient block">Portfolio</span>
+                <span className="text-yellow-gradient block">Portfolio</span>
               </h2>
             </div>
             <div className="animate-on-scroll">
@@ -286,7 +286,7 @@ const Portfolio = ({ isHomePage = false }: PortfolioProps) => {
 
                 {/* Project Info */}
                 <div className="p-6">
-                  <div className="text-sm text-blue-600 font-medium mb-2">
+                  <div className="text-sm text-yellow-600 font-medium mb-2">
                     {project.category}
                   </div>
                   <h3 className="text-xl font-semibold mb-3 font-space">
@@ -310,7 +310,7 @@ const Portfolio = ({ isHomePage = false }: PortfolioProps) => {
 
                   <button 
                     onClick={() => openProjectDialog(project)}
-                    className="text-black font-medium hover:text-blue-600 transition-colors duration-200 group-hover:underline"
+                    className="text-black font-medium hover:text-yellow-600 transition-colors duration-200 group-hover:underline"
                   >
                     View Project →
                   </button>
@@ -360,7 +360,7 @@ const Portfolio = ({ isHomePage = false }: PortfolioProps) => {
                 <DialogTitle className="text-2xl font-bold font-space mb-2">
                   {selectedProject.title}
                 </DialogTitle>
-                <DialogDescription className="text-blue-600 font-medium">
+                <DialogDescription className="text-yellow-600 font-medium">
                   {selectedProject.category}
                 </DialogDescription>
               </DialogHeader>
@@ -426,17 +426,17 @@ const Portfolio = ({ isHomePage = false }: PortfolioProps) => {
                   {/* Project Stats */}
                   <div className="grid grid-cols-3 gap-4">
                     <div className="text-center p-3 bg-gray-50 rounded-lg">
-                      <Calendar className="mx-auto mb-1 text-blue-600" size={20} />
+                      <Calendar className="mx-auto mb-1 text-yellow-600" size={20} />
                       <div className="text-sm font-medium">{selectedProject.duration}</div>
                       <div className="text-xs text-gray-500">Duration</div>
                     </div>
                     <div className="text-center p-3 bg-gray-50 rounded-lg">
-                      <Users className="mx-auto mb-1 text-blue-600" size={20} />
+                      <Users className="mx-auto mb-1 text-yellow-600" size={20} />
                       <div className="text-sm font-medium">{selectedProject.teamSize}</div>
                       <div className="text-xs text-gray-500">Team Size</div>
                     </div>
                     <div className="text-center p-3 bg-gray-50 rounded-lg">
-                      <Award className="mx-auto mb-1 text-blue-600" size={20} />
+                      <Award className="mx-auto mb-1 text-yellow-600" size={20} />
                       <div className="text-sm font-medium">{selectedProject.client}</div>
                       <div className="text-xs text-gray-500">Client</div>
                     </div>
@@ -449,7 +449,7 @@ const Portfolio = ({ isHomePage = false }: PortfolioProps) => {
                       {selectedProject.technologies.map((tech: string, techIndex: number) => (
                         <span 
                           key={techIndex}
-                          className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium"
+                          className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium"
                         >
                           {tech}
                         </span>
@@ -465,7 +465,7 @@ const Portfolio = ({ isHomePage = false }: PortfolioProps) => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                   {selectedProject.features.map((feature: string, featureIndex: number) => (
                     <div key={featureIndex} className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                      <div className="w-2 h-2 bg-yellow-600 rounded-full"></div>
                       <span className="text-gray-700">{feature}</span>
                     </div>
                   ))}
