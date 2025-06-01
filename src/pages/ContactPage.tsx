@@ -14,7 +14,7 @@ const ContactPage = () => {
           <div className="text-center animate-fade-in">
             <h1 className="text-5xl md:text-6xl font-bold font-space mb-6">
               Get In
-              <span className="text-gradient block">Touch</span>
+              <span className="text-yellow-gradient block">Touch</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Ready to bring your vision to life? Let's start a conversation about your next project.

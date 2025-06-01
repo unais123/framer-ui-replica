@@ -69,7 +69,7 @@ const AboutPage = () => {
           <div className="text-center animate-fade-in">
             <h1 className="text-5xl md:text-6xl font-bold font-space mb-6">
               About
-              <span className="text-gradient block">Our Story</span>
+              <span className="text-yellow-gradient block">Our Story</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               We are a creative agency passionate about transforming ideas into exceptional digital experiences through thoughtful design and cutting-edge technology.
@@ -108,7 +108,7 @@ const AboutPage = () => {
                 key={index}
                 className="animate-on-scroll text-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300"
               >
-                <div className="text-blue-600 mb-4 flex justify-center">
+                <div className="text-yellow-600 mb-4 flex justify-center">
                   {stat.icon}
                 </div>
                 <div className="text-3xl font-bold text-gray-900 mb-2">{stat.number}</div>
@@ -173,7 +173,7 @@ const AboutPage = () => {
                     className="w-24 h-24 rounded-full mx-auto mb-6 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <h3 className="text-xl font-semibold mb-2 font-space">{member.name}</h3>
-                  <p className="text-blue-600 font-medium mb-4">{member.role}</p>
+                  <p className="text-yellow-600 font-medium mb-4">{member.role}</p>
                   <p className="text-gray-600 leading-relaxed">{member.description}</p>
                 </div>
               ))}

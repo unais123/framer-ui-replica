@@ -14,7 +14,7 @@ const WorkPage = () => {
           <div className="text-center animate-fade-in">
             <h1 className="text-5xl md:text-6xl font-bold font-space mb-6">
               Our
-              <span className="text-gradient block">Work</span>
+              <span className="text-yellow-gradient block">Work</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Explore our portfolio of successful projects and see how we've helped businesses transform their digital presence.
