@@ -37,8 +37,12 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <Link to="/" className="text-2xl font-bold font-space text-gradient">
-            Portfolio
+          <Link to="/" className="flex items-center">
+            <img 
+              src="/lovable-uploads/3db9d9a5-9574-4a8a-bb64-6f0b717dfc8b.png" 
+              alt="ATUA Agency" 
+              className="h-10 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -49,7 +53,7 @@ const Navigation = () => {
                 to={item.href}
                 className={`transition-colors duration-200 font-medium ${
                   isActive(item.href) 
-                    ? 'text-gray-900 border-b-2 border-gray-900' 
+                    ? 'text-gray-900 border-b-2 border-yellow-600' 
                     : 'text-gray-700 hover:text-gray-900'
                 }`}
               >
@@ -62,7 +66,7 @@ const Navigation = () => {
           <div className="hidden md:block">
             <Link 
               to="/contact"
-              className="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition-colors duration-200"
+              className="bg-yellow-600 text-white px-6 py-2 rounded-full hover:bg-yellow-700 transition-colors duration-200"
             >
               Get Started
             </Link>
@@ -99,7 +103,7 @@ const Navigation = () => {
               ))}
               <Link 
                 to="/contact"
-                className="block w-full text-left px-3 py-2 bg-black text-white rounded-md hover:bg-gray-800 transition-colors duration-200"
+                className="block w-full text-left px-3 py-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-700 transition-colors duration-200"
                 onClick={() => setIsOpen(false)}
               >
                 Get Started

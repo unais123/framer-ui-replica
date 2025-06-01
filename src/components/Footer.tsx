@@ -27,8 +27,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-12">
           {/* Brand Section */}
           <div className="lg:col-span-2">
-            <div className="text-2xl font-bold font-space mb-4">
-              Portfolio
+            <div className="mb-4">
+              <img 
+                src="/lovable-uploads/3db9d9a5-9574-4a8a-bb64-6f0b717dfc8b.png" 
+                alt="ATUA Agency" 
+                className="h-12 w-auto filter invert"
+              />
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
               Creating exceptional digital experiences through innovative design and cutting-edge technology.
@@ -38,7 +42,7 @@ const Footer = () => {
                 <a
                   key={index}
                   href={social.href}
-                  className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors duration-200"
+                  className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition-colors duration-200"
                   aria-label={social.name}
                 >
                   {social.icon}
@@ -82,9 +86,9 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-400"
+                className="flex-1 px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-yellow-600 focus:border-transparent text-white placeholder-gray-400"
               />
-              <button className="bg-white text-black px-6 py-3 rounded-lg hover:bg-gray-200 transition-colors duration-200 font-medium">
+              <button className="bg-yellow-600 text-white px-6 py-3 rounded-lg hover:bg-yellow-700 transition-colors duration-200 font-medium">
                 Subscribe
               </button>
             </div>
@@ -94,7 +98,7 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            © 2024 Portfolio. All rights reserved.
+            © 2024 ATUA Agency. All rights reserved.
           </p>
           <div className="flex items-center space-x-6">
             <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">
@@ -105,7 +109,7 @@ const Footer = () => {
             </a>
             <button
               onClick={scrollToTop}
-              className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors duration-200"
+              className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition-colors duration-200"
               aria-label="Scroll to top"
             >
               <ArrowUp className="w-5 h-5" />
