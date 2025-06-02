@@ -1,5 +1,4 @@
-
-import { Github, Twitter, Linkedin, Instagram, ArrowUp } from 'lucide-react';
+import { Github, Twitter, Linkedin, Instagram, ArrowUp, Facebook, Mail } from 'lucide-react';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -7,10 +6,10 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { icon: <Twitter className="w-5 h-5" />, href: "#", name: "Twitter" },
-    { icon: <Github className="w-5 h-5" />, href: "#", name: "GitHub" },
-    { icon: <Linkedin className="w-5 h-5" />, href: "#", name: "LinkedIn" },
-    { icon: <Instagram className="w-5 h-5" />, href: "#", name: "Instagram" },
+    { icon: <Linkedin className="w-5 h-5" />, href: "https://www.linkedin.com/company/atua-agency/", name: "LinkedIn" },
+    { icon: <Instagram className="w-5 h-5" />, href: "https://www.instagram.com/atua_agency/?hl=en", name: "Instagram" },
+    { icon: <Facebook className="w-5 h-5" />, href: "#", name: "Facebook" },
+    { icon: <Mail className="w-5 h-5" />, href: "mailto:atuaagency@gmail.com", name: "Gmail" },
   ];
 
   const footerLinks = {
@@ -44,6 +43,8 @@ const Footer = () => {
                   href={social.href}
                   className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition-colors duration-200"
                   aria-label={social.name}
+                  target={social.href.startsWith('http') ? '_blank' : '_self'}
+                  rel={social.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                 >
                   {social.icon}
                 </a>
