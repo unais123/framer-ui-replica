@@ -11,6 +11,7 @@ const Portfolio = ({ isHomePage = false }: PortfolioProps) => {
   const sectionRef = useRef<HTMLElement>(null);
   const [selectedProject, setSelectedProject] = useState<any>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [activeFilter, setActiveFilter] = useState("All");
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -214,6 +215,8 @@ const Portfolio = ({ isHomePage = false }: PortfolioProps) => {
     setIsDialogOpen(true);
   };
 
+  const filters = ["All", "Web Development", "Mobile Development", "Branding", "Web Design"];
+
   return (
     <>
       <section ref={sectionRef} id="work" className="py-20 bg-white">
@@ -238,20 +241,55 @@ const Portfolio = ({ isHomePage = false }: PortfolioProps) => {
 
           {/* Filter Tabs - Only show on work page */}
           {!isHomePage && (
-            <div className="animate-on-scroll flex justify-center mb-12">
-              <div className="flex flex-wrap gap-4 bg-gray-100 p-2 rounded-full">
-                {["All", "Web Development", "Mobile Development", "Branding", "Web Design"].map((filter) => (
-                  <button
-                    key={filter}
-                    className={`px-6 py-2 rounded-full transition-all duration-200 ${
-                      filter === "All" 
-                        ? "bg-black text-white" 
-                        : "text-gray-600 hover:text-gray-900 hover:bg-gray-200"
-                    }`}
-                  >
-                    {filter}
-                  </button>
-                ))}
+            <div className="animate-on-scroll mb-12">
+              {/* Desktop Filter Tabs */}
+              <div className="hidden md:flex justify-center">
+                <div className="flex flex-wrap gap-4 bg-gray-100 p-2 rounded-full">
+                  {filters.map((filter) => (
+                    <button
+                      key={filter}
+                      onClick={() => setActiveFilter(filter)}
+                      className={`px-6 py-2 rounded-full transition-all duration-200 ${
+                        filter === activeFilter 
+                          ? "bg-black text-white" 
+                          : "text-gray-600 hover:text-gray-900 hover:bg-gray-200"
+                      }`}
+                    >
+                      {filter}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Mobile Filter Cards */}
+              <div className="md:hidden">
+                <div className="grid grid-cols-2 gap-3 px-2">
+                  {filters.map((filter) => (
+                    <button
+                      key={filter}
+                      onClick={() => setActiveFilter(filter)}
+                      className={`relative overflow-hidden rounded-xl p-4 text-center transition-all duration-300 transform hover:scale-105 ${
+                        filter === activeFilter 
+                          ? "bg-gradient-to-br from-yellow-400 to-yellow-600 text-white shadow-lg" 
+                          : "bg-white border-2 border-gray-200 text-gray-700 hover:border-yellow-300 hover:shadow-md"
+                      }`}
+                    >
+                      <div className={`text-sm font-semibold mb-1 ${filter === activeFilter ? 'text-white' : 'text-gray-800'}`}>
+                        {filter}
+                      </div>
+                      <div className={`text-xs ${filter === activeFilter ? 'text-yellow-100' : 'text-gray-500'}`}>
+                        {filter === "All" && "View Everything"}
+                        {filter === "Web Development" && "Modern Websites"}
+                        {filter === "Mobile Development" && "iOS & Android"}
+                        {filter === "Branding" && "Visual Identity"}
+                        {filter === "Web Design" && "UI/UX Design"}
+                      </div>
+                      {filter === activeFilter && (
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse"></div>
+                      )}
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
           )}
