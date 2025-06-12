@@ -2,6 +2,7 @@
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import Contact from '../components/Contact';
+import ChatBot from '../components/ChatBot';
 
 const ContactPage = () => {
   return (
@@ -27,6 +28,7 @@ const ContactPage = () => {
       <Contact />
 
       <Footer />
+      <ChatBot />
     </div>
   );
 };
