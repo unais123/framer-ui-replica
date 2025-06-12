@@ -1,3 +1,4 @@
+
 import { Github, Twitter, Linkedin, Instagram, ArrowUp, Facebook, Mail } from 'lucide-react';
 
 const Footer = () => {
@@ -13,17 +14,16 @@ const Footer = () => {
   ];
 
   const footerLinks = {
-    Services: ["Web Development", "Mobile Apps", "Brand Design", "Digital Marketing"],
-    Company: ["About Us", "Our Team", "Careers", "Contact"],
-    Resources: ["Blog", "Case Studies", "Documentation", "Support"],
-    Legal: ["Privacy Policy", "Terms of Service", "Cookie Policy", "Disclaimer"]
+    Services: ["Web Development", "AI Automation", "Branding", "Digital Marketing"],
+    Company: ["About Us", "Our Team", "Careers", "Contact", "Blog"],
+    Legal: ["Privacy Policy", "Terms of Service"]
   };
 
   return (
     <footer className="bg-black text-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <div className="mb-4">

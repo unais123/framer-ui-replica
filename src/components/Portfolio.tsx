@@ -215,7 +215,7 @@ const Portfolio = ({ isHomePage = false }: PortfolioProps) => {
     setIsDialogOpen(true);
   };
 
-  const filters = ["All", "Web Development", "Mobile Development", "Branding", "Web Design"];
+  const filters = ["All", "Web Development and Testing", "Digital Marketing", "Branding", "AI Automation", "Videography and Photography"];
 
   return (
     <>
@@ -263,30 +263,28 @@ const Portfolio = ({ isHomePage = false }: PortfolioProps) => {
 
               {/* Mobile Filter Cards */}
               <div className="md:hidden">
-                <div className="grid grid-cols-2 gap-3 px-2">
+                <div className="grid grid-cols-2 gap-2 px-4 max-w-md mx-auto">
                   {filters.map((filter) => (
                     <button
                       key={filter}
                       onClick={() => setActiveFilter(filter)}
-                      className={`relative overflow-hidden rounded-xl p-4 text-center transition-all duration-300 transform hover:scale-105 ${
+                      className={`relative overflow-hidden rounded-lg p-3 text-center transition-all duration-300 transform hover:scale-105 ${
                         filter === activeFilter 
-                          ? "bg-gradient-to-br from-yellow-400 to-yellow-600 text-white shadow-lg" 
-                          : "bg-white border-2 border-gray-200 text-gray-700 hover:border-yellow-300 hover:shadow-md"
+                          ? "bg-black text-white shadow-lg" 
+                          : "bg-white border-2 border-gray-200 text-gray-700 hover:border-gray-300 hover:shadow-md"
                       }`}
                     >
-                      <div className={`text-sm font-semibold mb-1 ${filter === activeFilter ? 'text-white' : 'text-gray-800'}`}>
+                      <div className={`text-xs font-semibold mb-1 ${filter === activeFilter ? 'text-white' : 'text-gray-800'}`}>
                         {filter}
                       </div>
-                      <div className={`text-xs ${filter === activeFilter ? 'text-yellow-100' : 'text-gray-500'}`}>
+                      <div className={`text-xs ${filter === activeFilter ? 'text-gray-300' : 'text-gray-500'}`}>
                         {filter === "All" && "View Everything"}
-                        {filter === "Web Development" && "Modern Websites"}
-                        {filter === "Mobile Development" && "iOS & Android"}
+                        {filter === "Web Development and Testing" && "Websites & QA"}
+                        {filter === "Digital Marketing" && "Online Growth"}
                         {filter === "Branding" && "Visual Identity"}
-                        {filter === "Web Design" && "UI/UX Design"}
+                        {filter === "AI Automation" && "Smart Solutions"}
+                        {filter === "Videography and Photography" && "Visual Content"}
                       </div>
-                      {filter === activeFilter && (
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse"></div>
-                      )}
                     </button>
                   ))}
                 </div>
