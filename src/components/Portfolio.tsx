@@ -297,7 +297,8 @@ const Portfolio = ({ isHomePage = false }: PortfolioProps) => {
             {displayedProjects.map((project, index) => (
               <div 
                 key={index}
-                className={`animate-on-scroll group relative overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 ${
+                onClick={() => openProjectDialog(project)}
+                className={`animate-on-scroll group relative overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 cursor-pointer ${
                   project.featured && !isHomePage ? 'md:col-span-2 lg:col-span-1' : ''
                 }`}
               >
@@ -308,16 +309,7 @@ const Portfolio = ({ isHomePage = false }: PortfolioProps) => {
                     alt={project.title}
                     className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
-                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex gap-4">
-                      <button className="bg-white text-black p-3 rounded-full hover:bg-gray-100 transition-colors duration-200">
-                        <ExternalLink size={20} />
-                      </button>
-                      <button className="bg-white text-black p-3 rounded-full hover:bg-gray-100 transition-colors duration-200">
-                        <Github size={20} />
-                      </button>
-                    </div>
-                  </div>
+                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
                 </div>
 
                 {/* Project Info */}
@@ -344,12 +336,9 @@ const Portfolio = ({ isHomePage = false }: PortfolioProps) => {
                     ))}
                   </div>
 
-                  <button 
-                    onClick={() => openProjectDialog(project)}
-                    className="text-black font-medium hover:text-yellow-600 transition-colors duration-200 group-hover:underline"
-                  >
+                  <div className="text-black font-medium group-hover:text-yellow-600 transition-colors duration-200">
                     View Project →
-                  </button>
+                  </div>
                 </div>
               </div>
             ))}
