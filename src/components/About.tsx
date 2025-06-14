@@ -1,6 +1,5 @@
-
 import { useEffect, useRef } from 'react';
-import { Award, Users, Lightbulb, Target } from 'lucide-react';
+import { Users, Lightbulb, Target, Heart } from 'lucide-react';
 
 const About = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -31,9 +30,9 @@ const About = () => {
 
   const features = [
     {
-      icon: <Award className="w-8 h-8" />,
-      title: "Award Winning",
-      description: "Recognized for excellence in design and innovation across multiple industry awards."
+      icon: <Heart className="w-8 h-8" />,
+      title: "Client Satisfaction",
+      description: "Our clients are our priority. We deliver exceptional results that exceed expectations and build lasting relationships."
     },
     {
       icon: <Users className="w-8 h-8" />,
