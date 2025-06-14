@@ -68,7 +68,7 @@ const Portfolio = ({ isHomePage = false }: PortfolioProps) => {
     },
     {
       title: "Mobile Banking App",
-      category: "Mobile Development",
+      category: "AI Automation",
       description: "Secure and intuitive mobile banking application with biometric authentication and real-time transactions.",
       image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       additionalImages: [
@@ -96,7 +96,7 @@ const Portfolio = ({ isHomePage = false }: PortfolioProps) => {
     },
     {
       title: "Fitness Tracking App",
-      category: "Mobile Development",
+      category: "AI Automation",
       description: "Comprehensive fitness app with workout tracking, nutrition planning, and social features.",
       image: "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       additionalImages: [
@@ -180,7 +180,7 @@ const Portfolio = ({ isHomePage = false }: PortfolioProps) => {
     },
     {
       title: "Restaurant Website",
-      category: "Web Design",
+      category: "Digital Marketing",
       description: "Beautiful restaurant website with online ordering, reservation system, and menu management.",
       image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       additionalImages: [
@@ -215,7 +215,7 @@ const Portfolio = ({ isHomePage = false }: PortfolioProps) => {
     setIsDialogOpen(true);
   };
 
-  const filters = ["All", "Web Development and Testing", "Digital Marketing", "Branding", "AI Automation", "Videography and Photography"];
+  const filters = ["All", "Web Development", "AI Automation", "Branding", "Digital Marketing"];
 
   return (
     <>
@@ -279,11 +279,10 @@ const Portfolio = ({ isHomePage = false }: PortfolioProps) => {
                       </div>
                       <div className={`text-xs ${filter === activeFilter ? 'text-gray-300' : 'text-gray-500'}`}>
                         {filter === "All" && "View Everything"}
-                        {filter === "Web Development and Testing" && "Websites & QA"}
-                        {filter === "Digital Marketing" && "Online Growth"}
-                        {filter === "Branding" && "Visual Identity"}
+                        {filter === "Web Development" && "Websites & Apps"}
                         {filter === "AI Automation" && "Smart Solutions"}
-                        {filter === "Videography and Photography" && "Visual Content"}
+                        {filter === "Branding" && "Visual Identity"}
+                        {filter === "Digital Marketing" && "Online Growth"}
                       </div>
                     </button>
                   ))}
