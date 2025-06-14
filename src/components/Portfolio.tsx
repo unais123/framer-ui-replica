@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from 'react';
 import { ExternalLink, Github, Calendar, Users, Award } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
@@ -208,7 +209,12 @@ const Portfolio = ({ isHomePage = false }: PortfolioProps) => {
     }
   ];
 
-  const displayedProjects = isHomePage ? projects.slice(0, 3) : projects;
+  // Filter out specific projects for home page display
+  const homePageProjects = projects.filter(project => 
+    !["Brand Identity Design", "SaaS Dashboard", "Restaurant Website"].includes(project.title)
+  );
+
+  const displayedProjects = isHomePage ? homePageProjects.slice(0, 3) : projects;
 
   const openProjectDialog = (project: any) => {
     setSelectedProject(project);
