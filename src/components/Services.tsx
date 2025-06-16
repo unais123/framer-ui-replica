@@ -238,7 +238,7 @@ const Services = ({ isHomePage = false }: ServicesProps) => {
             key={index}
             className="animate-on-scroll bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group text-center"
           >
-            <div className="text-gray-700 mb-4 group-hover:text-blue-600 transition-colors duration-300 flex justify-center">
+            <div className="text-gray-700 mb-4 group-hover:text-yellow-700 transition-colors duration-300 flex justify-center">
               {service.icon}
             </div>
             

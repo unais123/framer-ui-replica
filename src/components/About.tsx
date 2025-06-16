@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 import { Users, Lightbulb, Target, Heart } from 'lucide-react';
 
@@ -110,9 +111,9 @@ const About = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
               { number: "98%", label: "Client Satisfaction" },
-              { number: "200+", label: "Projects Delivered" },
-              { number: "24/7", label: "Support Available" },
-              { number: "10+", label: "Industry Awards" }
+              { number: "25+", label: "Projects Delivered" },
+              { number: "24/7", label: "AI Support Available" },
+              { number: "10+", label: "AI Integrations" }
             ].map((stat, index) => (
               <div key={index} className="animate-on-scroll">
                 <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">

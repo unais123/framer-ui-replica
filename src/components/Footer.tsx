@@ -27,7 +27,7 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <div className="mb-4">
-              <h3 className="text-2xl font-bold font-space text-white">ATUA Agency</h3>
+              <h3 className="text-2xl font-bold font-space text-white">ATUA AGENCY</h3>
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
               Creating exceptional digital experiences through innovative design and cutting-edge technology.
@@ -95,7 +95,7 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            © 2024 ATUA Agency. All rights reserved.
+            © 2024 ATUA AGENCY. All rights reserved.
           </p>
           <div className="flex items-center space-x-6">
             <a href="/privacy-policy" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">

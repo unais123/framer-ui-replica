@@ -55,10 +55,10 @@ const AIAutomation = () => {
         <div className="text-center mb-16">
           <div className="animate-on-scroll">
             <div className="flex items-center justify-center mb-6">
-              <Bot className="w-12 h-12 text-yellow-400 mr-4" />
+              <Bot className="w-12 h-12 text-yellow-700 mr-4" />
               <h2 className="text-4xl md:text-5xl font-bold font-space text-gray-900">
                 AI Automation with
-                <span className="text-yellow-gradient block md:inline md:ml-3">n8n</span>
+                <span className="text-yellow-700 block md:inline md:ml-3">n8n</span>
               </h2>
             </div>
           </div>
@@ -77,7 +77,7 @@ const AIAutomation = () => {
               key={index}
               className="animate-on-scroll bg-gray-50 p-8 rounded-2xl border border-gray-200 hover:bg-gray-100 transition-all duration-300 group"
             >
-              <div className="text-yellow-400 mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="text-yellow-700 mb-6 group-hover:scale-110 transition-transform duration-300">
                 {feature.icon}
               </div>
               
@@ -102,30 +102,30 @@ const AIAutomation = () => {
               
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start">
-                  <ArrowRight className="w-5 h-5 text-yellow-400 mr-3 mt-1 flex-shrink-0" />
+                  <ArrowRight className="w-5 h-5 text-yellow-700 mr-3 mt-1 flex-shrink-0" />
                   <span className="text-gray-700">Visual workflow builder - no coding required</span>
                 </li>
                 <li className="flex items-start">
-                  <ArrowRight className="w-5 h-5 text-yellow-400 mr-3 mt-1 flex-shrink-0" />
-                  <span className="text-gray-700">500+ pre-built integrations with popular tools</span>
+                  <ArrowRight className="w-5 h-5 text-yellow-700 mr-3 mt-1 flex-shrink-0" />
+                  <span className="text-gray-700">As per requirement, we will create custom automation solutions</span>
                 </li>
                 <li className="flex items-start">
-                  <ArrowRight className="w-5 h-5 text-yellow-400 mr-3 mt-1 flex-shrink-0" />
+                  <ArrowRight className="w-5 h-5 text-yellow-700 mr-3 mt-1 flex-shrink-0" />
                   <span className="text-gray-700">Self-hosted solution for complete data control</span>
                 </li>
                 <li className="flex items-start">
-                  <ArrowRight className="w-5 h-5 text-yellow-400 mr-3 mt-1 flex-shrink-0" />
+                  <ArrowRight className="w-5 h-5 text-yellow-700 mr-3 mt-1 flex-shrink-0" />
                   <span className="text-gray-700">Advanced error handling and monitoring</span>
                 </li>
                 <li className="flex items-start">
-                  <ArrowRight className="w-5 h-5 text-yellow-400 mr-3 mt-1 flex-shrink-0" />
+                  <ArrowRight className="w-5 h-5 text-yellow-700 mr-3 mt-1 flex-shrink-0" />
                   <span className="text-gray-700">Scalable automation for growing businesses</span>
                 </li>
               </ul>
 
               <Link 
                 to="/contact"
-                className="inline-flex items-center bg-yellow-400 text-black px-8 py-4 rounded-full font-semibold hover:bg-yellow-300 transition-all duration-300 transform hover:scale-105"
+                className="inline-flex items-center bg-yellow-700 text-white px-8 py-4 rounded-full font-semibold hover:bg-yellow-800 transition-all duration-300 transform hover:scale-105"
               >
                 Get Started with AI Automation
                 <ArrowRight className="w-5 h-5 ml-2" />
@@ -133,14 +133,14 @@ const AIAutomation = () => {
             </div>
 
             <div className="relative">
-              <div className="bg-gradient-to-br from-yellow-400/20 to-yellow-600/20 rounded-3xl p-8 border border-yellow-400/30">
+              <div className="bg-gradient-to-br from-yellow-700/20 to-yellow-800/20 rounded-3xl p-8 border border-yellow-700/30">
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-yellow-400 mb-2">80%</div>
+                  <div className="text-4xl font-bold text-yellow-700 mb-2">80%</div>
                   <div className="text-gray-600 mb-6">Time Saved on Manual Tasks</div>
                   
                   <div className="grid grid-cols-2 gap-4 text-center">
                     <div className="bg-white/70 rounded-lg p-4">
-                      <div className="text-2xl font-bold text-gray-900 mb-1">500+</div>
+                      <div className="text-2xl font-bold text-gray-900 mb-1">10+</div>
                       <div className="text-sm text-gray-600">Integrations</div>
                     </div>
                     <div className="bg-white/70 rounded-lg p-4">
