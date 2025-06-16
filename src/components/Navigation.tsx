@@ -17,6 +17,11 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Scroll to top when location changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   const navItems = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
@@ -32,12 +37,17 @@ const Navigation = () => {
     return location.pathname.startsWith(href);
   };
 
+  const handleNavClick = () => {
+    setIsOpen(false);
+    window.scrollTo(0, 0);
+  };
+
   return (
     <nav className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center" onClick={handleNavClick}>
             <img 
               src="/lovable-uploads/3db9d9a5-9574-4a8a-bb64-6f0b717dfc8b.png" 
               alt="ATUA Agency" 
@@ -51,6 +61,7 @@ const Navigation = () => {
               <Link
                 key={item.name}
                 to={item.href}
+                onClick={handleNavClick}
                 className={`transition-colors duration-200 font-medium ${
                   isActive(item.href) 
                     ? 'text-gray-900 border-b-2 border-yellow-600' 
@@ -66,6 +77,7 @@ const Navigation = () => {
           <div className="hidden md:block">
             <Link 
               to="/contact"
+              onClick={handleNavClick}
               className="bg-yellow-600 text-white px-6 py-2 rounded-full hover:bg-yellow-700 transition-colors duration-200"
             >
               Get Started
@@ -96,7 +108,7 @@ const Navigation = () => {
                       ? 'text-gray-900 bg-gray-100'
                       : 'text-gray-700 hover:text-gray-900 hover:bg-gray-50'
                   }`}
-                  onClick={() => setIsOpen(false)}
+                  onClick={handleNavClick}
                 >
                   {item.name}
                 </Link>
@@ -104,7 +116,7 @@ const Navigation = () => {
               <Link 
                 to="/contact"
                 className="block w-full text-left px-3 py-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-700 transition-colors duration-200"
-                onClick={() => setIsOpen(false)}
+                onClick={handleNavClick}
               >
                 Get Started
               </Link>

@@ -6,7 +6,6 @@ import Services from '../components/Services';
 import Portfolio from '../components/Portfolio';
 import AIAutomation from '../components/AIAutomation';
 import Footer from '../components/Footer';
-import ChatBot from '../components/ChatBot';
 
 const Index = () => {
   return (
@@ -18,7 +17,6 @@ const Index = () => {
       <Portfolio />
       <AIAutomation />
       <Footer />
-      <ChatBot />
     </div>
   );
 };

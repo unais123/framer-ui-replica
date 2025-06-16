@@ -49,21 +49,21 @@ const AIAutomation = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-20 bg-gradient-to-br from-gray-900 to-black text-white">
+    <section ref={sectionRef} className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="animate-on-scroll">
             <div className="flex items-center justify-center mb-6">
               <Bot className="w-12 h-12 text-yellow-400 mr-4" />
-              <h2 className="text-4xl md:text-5xl font-bold font-space">
+              <h2 className="text-4xl md:text-5xl font-bold font-space text-gray-900">
                 AI Automation with
                 <span className="text-yellow-gradient block md:inline md:ml-3">n8n</span>
               </h2>
             </div>
           </div>
           <div className="animate-on-scroll">
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Transform your business operations with intelligent automation powered by n8n. 
               Connect apps, automate workflows, and boost productivity like never before.
             </p>
@@ -75,17 +75,17 @@ const AIAutomation = () => {
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="animate-on-scroll bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300 group"
+              className="animate-on-scroll bg-gray-50 p-8 rounded-2xl border border-gray-200 hover:bg-gray-100 transition-all duration-300 group"
             >
               <div className="text-yellow-400 mb-6 group-hover:scale-110 transition-transform duration-300">
                 {feature.icon}
               </div>
               
-              <h3 className="text-xl font-semibold mb-4 font-space">
+              <h3 className="text-xl font-semibold mb-4 font-space text-gray-900">
                 {feature.title}
               </h3>
               
-              <p className="text-gray-300 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed">
                 {feature.description}
               </p>
             </div>
@@ -93,33 +93,33 @@ const AIAutomation = () => {
         </div>
 
         {/* Benefits Section */}
-        <div className="animate-on-scroll bg-white/5 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-white/10">
+        <div className="animate-on-scroll bg-gray-50 rounded-3xl p-8 md:p-12 border border-gray-200">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h3 className="text-3xl font-bold mb-6 font-space">
+              <h3 className="text-3xl font-bold mb-6 font-space text-gray-900">
                 Why Choose Our n8n Automation Services?
               </h3>
               
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start">
                   <ArrowRight className="w-5 h-5 text-yellow-400 mr-3 mt-1 flex-shrink-0" />
-                  <span className="text-gray-300">Visual workflow builder - no coding required</span>
+                  <span className="text-gray-700">Visual workflow builder - no coding required</span>
                 </li>
                 <li className="flex items-start">
                   <ArrowRight className="w-5 h-5 text-yellow-400 mr-3 mt-1 flex-shrink-0" />
-                  <span className="text-gray-300">500+ pre-built integrations with popular tools</span>
+                  <span className="text-gray-700">500+ pre-built integrations with popular tools</span>
                 </li>
                 <li className="flex items-start">
                   <ArrowRight className="w-5 h-5 text-yellow-400 mr-3 mt-1 flex-shrink-0" />
-                  <span className="text-gray-300">Self-hosted solution for complete data control</span>
+                  <span className="text-gray-700">Self-hosted solution for complete data control</span>
                 </li>
                 <li className="flex items-start">
                   <ArrowRight className="w-5 h-5 text-yellow-400 mr-3 mt-1 flex-shrink-0" />
-                  <span className="text-gray-300">Advanced error handling and monitoring</span>
+                  <span className="text-gray-700">Advanced error handling and monitoring</span>
                 </li>
                 <li className="flex items-start">
                   <ArrowRight className="w-5 h-5 text-yellow-400 mr-3 mt-1 flex-shrink-0" />
-                  <span className="text-gray-300">Scalable automation for growing businesses</span>
+                  <span className="text-gray-700">Scalable automation for growing businesses</span>
                 </li>
               </ul>
 
@@ -136,16 +136,16 @@ const AIAutomation = () => {
               <div className="bg-gradient-to-br from-yellow-400/20 to-yellow-600/20 rounded-3xl p-8 border border-yellow-400/30">
                 <div className="text-center">
                   <div className="text-4xl font-bold text-yellow-400 mb-2">80%</div>
-                  <div className="text-gray-300 mb-6">Time Saved on Manual Tasks</div>
+                  <div className="text-gray-600 mb-6">Time Saved on Manual Tasks</div>
                   
                   <div className="grid grid-cols-2 gap-4 text-center">
-                    <div className="bg-white/5 rounded-lg p-4">
-                      <div className="text-2xl font-bold text-white mb-1">500+</div>
-                      <div className="text-sm text-gray-400">Integrations</div>
+                    <div className="bg-white/70 rounded-lg p-4">
+                      <div className="text-2xl font-bold text-gray-900 mb-1">500+</div>
+                      <div className="text-sm text-gray-600">Integrations</div>
                     </div>
-                    <div className="bg-white/5 rounded-lg p-4">
-                      <div className="text-2xl font-bold text-white mb-1">24/7</div>
-                      <div className="text-sm text-gray-400">Automation</div>
+                    <div className="bg-white/70 rounded-lg p-4">
+                      <div className="text-2xl font-bold text-gray-900 mb-1">24/7</div>
+                      <div className="text-sm text-gray-600">Automation</div>
                     </div>
                   </div>
                 </div>
