@@ -212,7 +212,7 @@ const Portfolio = ({ isHomePage = false }: PortfolioProps) => {
   const homePageProjects = isHomePage 
     ? projects.filter(project => 
         !["Brand Identity Design", "SaaS Dashboard", "Restaurant Website"].includes(project.title)
-      ).slice(0, 3)
+      ).slice(0, 3)  // This already limits to 3, but let's make it more explicit
     : projects;
 
   // Apply filter for work page
