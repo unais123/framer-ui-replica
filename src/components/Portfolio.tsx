@@ -208,12 +208,8 @@ const Portfolio = ({ isHomePage = false }: PortfolioProps) => {
     }
   ];
 
-  // For home page, only show first 3 projects and exclude specific ones
-  const homePageProjects = isHomePage 
-    ? projects.filter(project => 
-        !["Brand Identity Design", "SaaS Dashboard", "Restaurant Website"].includes(project.title)
-      ).slice(0, 3)  // This already limits to 3, but let's make it more explicit
-    : projects;
+  // For home page, only show the first 3 projects (which excludes the ones we don't want)
+  const homePageProjects = isHomePage ? projects.slice(0, 3) : projects;
 
   // Apply filter for work page
   const filteredProjects = !isHomePage && activeFilter !== "All" 
