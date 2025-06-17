@@ -114,7 +114,7 @@ const Services = ({ isHomePage = false }: ServicesProps) => {
               key={index}
               className="animate-on-scroll bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
             >
-              <div className="text-gray-700 mb-6 group-hover:text-blue-600 transition-colors duration-300">
+              <div className="text-gray-700 mb-6 group-hover:text-yellow-600 transition-colors duration-300">
                 {service.icon}
               </div>
               
@@ -129,7 +129,7 @@ const Services = ({ isHomePage = false }: ServicesProps) => {
               <ul className="space-y-2 mb-6">
                 {service.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-center text-sm text-gray-500">
-                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3"></div>
+                    <div className="w-1.5 h-1.5 bg-yellow-600 rounded-full mr-3"></div>
                     {feature}
                   </li>
                 ))}
@@ -138,7 +138,7 @@ const Services = ({ isHomePage = false }: ServicesProps) => {
               <div className="mt-6 pt-6 border-t border-gray-100">
                 <Link 
                   to="/contact"
-                  className="text-black font-medium hover:text-blue-600 transition-colors duration-200 group-hover:underline"
+                  className="text-black font-medium hover:text-yellow-600 transition-colors duration-200 group-hover:underline"
                 >
                   Learn More →
                 </Link>
@@ -154,7 +154,7 @@ const Services = ({ isHomePage = false }: ServicesProps) => {
               key={index + 3}
               className="animate-on-scroll bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
             >
-              <div className="text-gray-700 mb-6 group-hover:text-blue-600 transition-colors duration-300">
+              <div className="text-gray-700 mb-6 group-hover:text-yellow-600 transition-colors duration-300">
                 {service.icon}
               </div>
               
@@ -169,7 +169,7 @@ const Services = ({ isHomePage = false }: ServicesProps) => {
               <ul className="space-y-2 mb-6">
                 {service.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-center text-sm text-gray-500">
-                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3"></div>
+                    <div className="w-1.5 h-1.5 bg-yellow-600 rounded-full mr-3"></div>
                     {feature}
                   </li>
                 ))}
@@ -178,7 +178,7 @@ const Services = ({ isHomePage = false }: ServicesProps) => {
               <div className="mt-6 pt-6 border-t border-gray-100">
                 <Link 
                   to="/contact"
-                  className="text-black font-medium hover:text-blue-600 transition-colors duration-200 group-hover:underline"
+                  className="text-black font-medium hover:text-yellow-600 transition-colors duration-200 group-hover:underline"
                 >
                   Learn More →
                 </Link>
@@ -194,7 +194,7 @@ const Services = ({ isHomePage = false }: ServicesProps) => {
               key={index + 6}
               className="animate-on-scroll bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
             >
-              <div className="text-gray-700 mb-6 group-hover:text-blue-600 transition-colors duration-300">
+              <div className="text-gray-700 mb-6 group-hover:text-yellow-600 transition-colors duration-300">
                 {service.icon}
               </div>
               
@@ -209,7 +209,7 @@ const Services = ({ isHomePage = false }: ServicesProps) => {
               <ul className="space-y-2 mb-6">
                 {service.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-center text-sm text-gray-500">
-                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3"></div>
+                    <div className="w-1.5 h-1.5 bg-yellow-600 rounded-full mr-3"></div>
                     {feature}
                   </li>
                 ))}
@@ -218,7 +218,7 @@ const Services = ({ isHomePage = false }: ServicesProps) => {
               <div className="mt-6 pt-6 border-t border-gray-100">
                 <Link 
                   to="/contact"
-                  className="text-black font-medium hover:text-blue-600 transition-colors duration-200 group-hover:underline"
+                  className="text-black font-medium hover:text-yellow-600 transition-colors duration-200 group-hover:underline"
                 >
                   Learn More →
                 </Link>
@@ -238,7 +238,7 @@ const Services = ({ isHomePage = false }: ServicesProps) => {
             key={index}
             className="animate-on-scroll bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group text-center"
           >
-            <div className="text-gray-700 mb-4 group-hover:text-yellow-700 transition-colors duration-300 flex justify-center">
+            <div className="text-gray-700 mb-4 group-hover:text-yellow-600 transition-colors duration-300 flex justify-center">
               {service.icon}
             </div>
             
