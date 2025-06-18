@@ -64,11 +64,6 @@ const Services = ({ isHomePage = false }: ServicesProps) => {
       icon: <Camera className="w-8 h-8" />,
       title: "Product Photography",
       description: "High-quality product photography that showcases your products in the best light for marketing and e-commerce."
-    },
-    {
-      icon: <Video className="w-8 h-8" />,
-      title: "Video Production",
-      description: "Creating engaging video content that tells your story and connects with audiences across digital platforms."
     }
   ];
 
@@ -86,25 +81,14 @@ const Services = ({ isHomePage = false }: ServicesProps) => {
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.slice(0, 6).map((service, index) => (
+          {services.map((service, index) => (
             <div 
               key={index}
               className="animate-on-scroll text-center group"
             >
               {/* Icon Container */}
-              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gray-100 mb-6 group-hover:transition-all duration-300" 
-                   style={{ '&:hover': { backgroundColor: '#FF9F04' } }}
-                   onMouseEnter={(e) => {
-                     e.currentTarget.style.backgroundColor = '#FF9F04';
-                     const icon = e.currentTarget.querySelector('div');
-                     if (icon) icon.style.color = 'white';
-                   }}
-                   onMouseLeave={(e) => {
-                     e.currentTarget.style.backgroundColor = '#f3f4f6';
-                     const icon = e.currentTarget.querySelector('div');
-                     if (icon) icon.style.color = '#4b5563';
-                   }}>
-                <div className="text-gray-600 transition-colors duration-300">
+              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gray-100 mb-6 group-hover:transition-all duration-300 group-hover:bg-[#FF9F04]">
+                <div className="text-gray-600 group-hover:text-white transition-colors duration-300">
                   {service.icon}
                 </div>
               </div>
@@ -128,10 +112,8 @@ const Services = ({ isHomePage = false }: ServicesProps) => {
             <div className="animate-on-scroll">
               <Link 
                 to="/contact"
-                className="px-8 py-4 rounded-full text-white transition-all duration-300 transform hover:scale-105 font-medium"
+                className="px-8 py-4 rounded-full text-white transition-all duration-300 transform hover:scale-105 font-medium hover:bg-[#e8900a]"
                 style={{ backgroundColor: '#FF9F04' }}
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#e8900a'}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#FF9F04'}
               >
                 Get Started Today
               </Link>
