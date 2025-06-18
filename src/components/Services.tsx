@@ -1,6 +1,6 @@
 
 import { useEffect, useRef } from 'react';
-import { Palette, Code, Bot, Megaphone, Camera, Video } from 'lucide-react';
+import { Palette, Code, Bot, Megaphone, Camera, Video, Brush } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface ServicesProps {
@@ -36,34 +36,39 @@ const Services = ({ isHomePage = false }: ServicesProps) => {
 
   const services = [
     {
-      icon: <Palette className="w-8 h-8" />,
-      title: "Planning",
-      description: "Creating stunning, user-friendly web designs that captivate your audience and drive conversions."
-    },
-    {
       icon: <Code className="w-8 h-8" />,
-      title: "Designing",
-      description: "Building responsive, fast, and scalable websites using modern technologies and frameworks."
+      title: "Web Designing & Development",
+      description: "Creating stunning, responsive websites with modern technologies and user-friendly designs that drive conversions."
     },
     {
       icon: <Bot className="w-8 h-8" />,
-      title: "Development",
-      description: "Intelligent automation solutions powered by AI to streamline your business processes."
+      title: "AI Automation",
+      description: "Intelligent automation solutions powered by AI to streamline your business processes and boost productivity."
+    },
+    {
+      icon: <Brush className="w-8 h-8" />,
+      title: "Branding",
+      description: "Comprehensive brand identity design including logos, color schemes, and brand guidelines for consistent messaging."
     },
     {
       icon: <Megaphone className="w-8 h-8" />,
-      title: "Marketing",
-      description: "Strategic advertising campaigns on Meta and Google platforms to maximize ROI."
+      title: "Digital Marketing",
+      description: "Strategic digital marketing campaigns across multiple platforms to maximize reach and return on investment."
+    },
+    {
+      icon: <Palette className="w-8 h-8" />,
+      title: "Social Media Handling",
+      description: "Professional social media management, content creation, and community engagement to grow your online presence."
     },
     {
       icon: <Camera className="w-8 h-8" />,
-      title: "Analytics",
-      description: "Professional product photography that showcases your products in the best light."
+      title: "Product Photography",
+      description: "High-quality product photography that showcases your products in the best light for marketing and e-commerce."
     },
     {
       icon: <Video className="w-8 h-8" />,
-      title: "Support",
-      description: "Creating engaging video content that tells your story and connects with audiences."
+      title: "Video Production",
+      description: "Creating engaging video content that tells your story and connects with audiences across digital platforms."
     }
   ];
 
@@ -73,22 +78,33 @@ const Services = ({ isHomePage = false }: ServicesProps) => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="animate-on-scroll">
-            <h2 className="text-3xl md:text-4xl font-bold font-space mb-4 text-gray-900">
-              OUR BEST SERVICES
+            <h2 className="text-4xl md:text-5xl font-bold font-space mb-4 text-gray-900">
+              <span style={{ color: '#FF9F04' }}>OUR</span> SERVICES
             </h2>
           </div>
         </div>
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
+          {services.slice(0, 6).map((service, index) => (
             <div 
               key={index}
               className="animate-on-scroll text-center group"
             >
               {/* Icon Container */}
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 mb-6 group-hover:bg-yellow-600 transition-all duration-300">
-                <div className="text-gray-600 group-hover:text-white transition-colors duration-300">
+              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gray-100 mb-6 group-hover:transition-all duration-300" 
+                   style={{ '&:hover': { backgroundColor: '#FF9F04' } }}
+                   onMouseEnter={(e) => {
+                     e.currentTarget.style.backgroundColor = '#FF9F04';
+                     const icon = e.currentTarget.querySelector('div');
+                     if (icon) icon.style.color = 'white';
+                   }}
+                   onMouseLeave={(e) => {
+                     e.currentTarget.style.backgroundColor = '#f3f4f6';
+                     const icon = e.currentTarget.querySelector('div');
+                     if (icon) icon.style.color = '#4b5563';
+                   }}>
+                <div className="text-gray-600 transition-colors duration-300">
                   {service.icon}
                 </div>
               </div>
@@ -112,7 +128,10 @@ const Services = ({ isHomePage = false }: ServicesProps) => {
             <div className="animate-on-scroll">
               <Link 
                 to="/contact"
-                className="bg-yellow-600 text-white px-8 py-4 rounded-full hover:bg-yellow-700 transition-all duration-300 transform hover:scale-105 font-medium"
+                className="px-8 py-4 rounded-full text-white transition-all duration-300 transform hover:scale-105 font-medium"
+                style={{ backgroundColor: '#FF9F04' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#e8900a'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#FF9F04'}
               >
                 Get Started Today
               </Link>

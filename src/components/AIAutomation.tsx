@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import { Bot, Zap, GitBranch, Clock, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -55,10 +54,10 @@ const AIAutomation = () => {
         <div className="text-center mb-16">
           <div className="animate-on-scroll">
             <div className="flex items-center justify-center mb-6">
-              <Bot className="w-12 h-12 text-yellow-600 mr-4" />
+              <Bot className="w-12 h-12 mr-4" style={{ color: '#FF9F04' }} />
               <h2 className="text-4xl md:text-5xl font-bold font-space text-gray-900">
                 AI Automation with
-                <span className="text-yellow-600 block md:inline md:ml-3">n8n</span>
+                <span className="block md:inline md:ml-3" style={{ color: '#FF9F04' }}>n8n</span>
               </h2>
             </div>
           </div>
@@ -77,7 +76,7 @@ const AIAutomation = () => {
               key={index}
               className="animate-on-scroll bg-gray-50 p-8 rounded-2xl border border-gray-200 hover:bg-gray-100 transition-all duration-300 group"
             >
-              <div className="text-yellow-600 mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="mb-6 group-hover:scale-110 transition-transform duration-300" style={{ color: '#FF9F04' }}>
                 {feature.icon}
               </div>
               
@@ -102,30 +101,33 @@ const AIAutomation = () => {
               
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start">
-                  <ArrowRight className="w-5 h-5 text-yellow-600 mr-3 mt-1 flex-shrink-0" />
+                  <ArrowRight className="w-5 h-5 mr-3 mt-1 flex-shrink-0" style={{ color: '#FF9F04' }} />
                   <span className="text-gray-700">Visual workflow builder - no coding required</span>
                 </li>
                 <li className="flex items-start">
-                  <ArrowRight className="w-5 h-5 text-yellow-600 mr-3 mt-1 flex-shrink-0" />
+                  <ArrowRight className="w-5 h-5 mr-3 mt-1 flex-shrink-0" style={{ color: '#FF9F04' }} />
                   <span className="text-gray-700">As per requirement, we will create custom automation solutions</span>
                 </li>
                 <li className="flex items-start">
-                  <ArrowRight className="w-5 h-5 text-yellow-600 mr-3 mt-1 flex-shrink-0" />
+                  <ArrowRight className="w-5 h-5 mr-3 mt-1 flex-shrink-0" style={{ color: '#FF9F04' }} />
                   <span className="text-gray-700">Self-hosted solution for complete data control</span>
                 </li>
                 <li className="flex items-start">
-                  <ArrowRight className="w-5 h-5 text-yellow-600 mr-3 mt-1 flex-shrink-0" />
+                  <ArrowRight className="w-5 h-5 mr-3 mt-1 flex-shrink-0" style={{ color: '#FF9F04' }} />
                   <span className="text-gray-700">Advanced error handling and monitoring</span>
                 </li>
                 <li className="flex items-start">
-                  <ArrowRight className="w-5 h-5 text-yellow-600 mr-3 mt-1 flex-shrink-0" />
+                  <ArrowRight className="w-5 h-5 mr-3 mt-1 flex-shrink-0" style={{ color: '#FF9F04' }} />
                   <span className="text-gray-700">Scalable automation for growing businesses</span>
                 </li>
               </ul>
 
               <Link 
                 to="/contact"
-                className="inline-flex items-center bg-yellow-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-yellow-700 transition-all duration-300 transform hover:scale-105"
+                className="inline-flex items-center text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105"
+                style={{ backgroundColor: '#FF9F04' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#e8900a'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#FF9F04'}
               >
                 Get Started with AI Automation
                 <ArrowRight className="w-5 h-5 ml-2" />
@@ -133,9 +135,9 @@ const AIAutomation = () => {
             </div>
 
             <div className="relative">
-              <div className="bg-gradient-to-br from-yellow-600/20 to-yellow-700/20 rounded-3xl p-8 border border-yellow-600/30">
+              <div className="rounded-3xl p-8 border" style={{ background: 'linear-gradient(135deg, rgba(255, 159, 4, 0.2) 0%, rgba(255, 159, 4, 0.3) 100%)', borderColor: 'rgba(255, 159, 4, 0.3)' }}>
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-yellow-600 mb-2">80%</div>
+                  <div className="text-4xl font-bold mb-2" style={{ color: '#FF9F04' }}>80%</div>
                   <div className="text-gray-600 mb-6">Time Saved on Manual Tasks</div>
                   
                   <div className="grid grid-cols-2 gap-4 text-center">

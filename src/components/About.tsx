@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import { Users, Lightbulb, Target, Heart } from 'lucide-react';
 
@@ -61,7 +60,7 @@ const About = () => {
             <div className="animate-on-scroll">
               <h2 className="text-4xl md:text-5xl font-bold font-space mb-6">
                 About Our
-                <span className="text-yellow-gradient block">Creative Studio</span>
+                <span className="block" style={{ color: '#FF9F04' }}>Creative Studio</span>
               </h2>
             </div>
             
@@ -92,7 +91,7 @@ const About = () => {
                 className="animate-on-scroll p-6 bg-gray-50 rounded-2xl hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2"
                 style={{animationDelay: `${index * 0.1}s`}}
               >
-                <div className="text-yellow-600 mb-4">
+                <div className="mb-4" style={{ color: '#FF9F04' }}>
                   {feature.icon}
                 </div>
                 <h3 className="text-xl font-semibold mb-3 font-space">
