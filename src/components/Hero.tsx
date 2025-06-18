@@ -54,10 +54,10 @@ const Hero = () => {
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-2xl mx-auto">
             {[
-              { number: "100+", label: "Projects Completed" },
-              { number: "50+", label: "Happy Clients" },
-              { number: "5+", label: "Years Experience" },
-              { number: "15+", label: "Awards Won" }
+              { number: "98%", label: "Client Satisfaction" },
+              { number: "25+", label: "Projects Delivered" },
+              { number: "24/7", label: "AI Support Available" },
+              { number: "10+", label: "AI Integrations" }
             ].map((stat, index) => (
               <div key={index} className="animate-scale-in" style={{animationDelay: `${index * 0.1}s`}}>
                 <div className="text-xl md:text-3xl font-bold text-gray-900">{stat.number}</div>

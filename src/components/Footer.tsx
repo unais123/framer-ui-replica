@@ -56,7 +56,8 @@ const Footer = () => {
                 {links.map((link, index) => (
                   <li key={index}>
                     <a
-                      href="#"
+                      href={category === 'Legal' && link === 'Privacy Policy' ? '/privacy-policy' : 
+                            category === 'Legal' && link === 'Terms of Service' ? '/terms-of-service' : '#'}
                       className="text-gray-400 hover:text-white transition-colors duration-200"
                     >
                       {link}
