@@ -1,7 +1,7 @@
 
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import { Users, Target, Eye, Heart, Lightbulb, Award } from 'lucide-react';
+import { Users, Target, Eye, Heart, Lightbulb, Award, Rocket, Globe, Code, Palette } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 
 const AboutPage = () => {
@@ -33,47 +33,61 @@ const AboutPage = () => {
 
   const teamMembers = [
     {
-      name: "Founder & CEO",
-      role: "Strategic Leadership",
-      description: "Leading the vision and strategic direction of ATUA AGENCY with expertise in digital transformation."
+      name: "Arjun Shetty",
+      role: "Founder & CEO",
+      description: "Visionary leader with 8+ years in digital transformation, specializing in AI integration and business automation. Passionate about helping businesses thrive in the digital age.",
+      icon: <Rocket className="w-6 h-6" />
     },
     {
-      name: "Creative Director",
-      role: "Design & Branding",
-      description: "Overseeing all creative projects with a focus on innovative design solutions and brand development."
+      name: "Priya Nair",
+      role: "Creative Director",
+      description: "Award-winning designer with expertise in brand identity and user experience. Transforms complex ideas into visually stunning and intuitive digital experiences.",
+      icon: <Palette className="w-6 h-6" />
     },
     {
-      name: "Technical Lead",
-      role: "Development & AI",
-      description: "Spearheading web development and AI automation projects with cutting-edge technologies."
+      name: "Rahul Kumar",
+      role: "Technical Lead",
+      description: "Full-stack developer and AI specialist with deep knowledge in modern web technologies and machine learning implementations for business solutions.",
+      icon: <Code className="w-6 h-6" />
     },
     {
-      name: "Marketing Specialist",
-      role: "Digital Marketing",
-      description: "Driving digital marketing strategies and campaigns that deliver measurable results for our clients."
+      name: "Sneha Rao",
+      role: "Marketing Strategist",
+      description: "Digital marketing expert with proven track record in SEO, social media, and performance marketing. Drives measurable growth for our clients.",
+      icon: <Globe className="w-6 h-6" />
     }
   ];
 
-  const values = [
+  const ideationProcess = [
     {
-      icon: <Heart className="w-8 h-8" />,
-      title: "Client-Centric Approach",
-      description: "We put our clients at the center of everything we do, ensuring their success is our success."
+      step: "01",
+      title: "Discovery & Research",
+      description: "We dive deep into understanding your business, target audience, and market landscape to identify opportunities and challenges."
     },
     {
-      icon: <Lightbulb className="w-8 h-8" />,
-      title: "Innovation",
-      description: "We embrace cutting-edge technologies and creative solutions to stay ahead of the curve."
+      step: "02",
+      title: "Strategic Planning",
+      description: "Based on our research, we develop comprehensive strategies that align with your business goals and market positioning."
     },
     {
-      icon: <Award className="w-8 h-8" />,
-      title: "Excellence",
-      description: "We strive for excellence in every project, delivering quality that exceeds expectations."
+      step: "03",
+      title: "Creative Conceptualization",
+      description: "Our creative team brainstorms innovative solutions, exploring multiple approaches to solve your unique challenges."
     },
     {
-      icon: <Users className="w-8 h-8" />,
-      title: "Collaboration",
-      description: "We believe in the power of teamwork and close collaboration with our clients."
+      step: "04",
+      title: "Prototyping & Testing",
+      description: "We create prototypes and conduct testing to validate concepts before moving to full-scale implementation."
+    },
+    {
+      step: "05",
+      title: "Implementation & Launch",
+      description: "We execute the finalized strategy with precision, ensuring every detail meets our high standards of quality."
+    },
+    {
+      step: "06",
+      title: "Optimization & Growth",
+      description: "Post-launch, we continuously monitor, analyze, and optimize to ensure maximum performance and ROI."
     }
   ];
 
@@ -90,7 +104,7 @@ const AboutPage = () => {
               <span className="block" style={{ color: '#FF9F04' }}>ATUA AGENCY</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              We are a passionate team of digital experts dedicated to transforming businesses through innovative design, development, and AI-powered solutions.
+              Pioneering the future of digital excellence through innovative AI-powered solutions and creative design strategies.
             </p>
           </div>
         </div>
@@ -103,26 +117,26 @@ const AboutPage = () => {
             <div>
               <div className="animate-on-scroll">
                 <h2 className="text-4xl md:text-5xl font-bold font-space mb-6">
-                  About Our
-                  <span className="block" style={{ color: '#FF9F04' }}>Company</span>
+                  Our
+                  <span className="block" style={{ color: '#FF9F04' }}>Story</span>
                 </h2>
               </div>
               
               <div className="animate-on-scroll">
                 <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                  Founded in Mangalore, Karnataka, ATUA AGENCY has grown from a small startup to a dynamic digital agency serving clients across India and beyond. We specialize in creating digital experiences that drive real business results.
+                  ATUA AGENCY was born from a simple yet powerful vision: to bridge the gap between traditional business practices and cutting-edge digital innovation. Founded in the vibrant coastal city of Mangalore, Karnataka, we've grown from a passionate startup to a leading digital transformation partner.
                 </p>
               </div>
 
               <div className="animate-on-scroll">
                 <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                  Our expertise spans web design and development, AI automation, branding, digital marketing, and content creation. We pride ourselves on staying ahead of industry trends and implementing cutting-edge solutions.
+                  Our name "ATUA" represents our commitment to being authentic, transformative, unique, and ambitious in everything we do. We believe that every business has untapped potential waiting to be unleashed through the right digital strategies.
                 </p>
               </div>
 
               <div className="animate-on-scroll">
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                  With a 98% client satisfaction rate and over 25 successful projects, we've built a reputation for excellence, innovation, and reliable service delivery.
+                  Today, we serve clients across India and internationally, specializing in AI automation, web development, digital marketing, and brand transformation. Our 98% client satisfaction rate speaks to our dedication to excellence and results-driven approach.
                 </p>
               </div>
             </div>
@@ -160,10 +174,13 @@ const AboutPage = () => {
                 <h3 className="text-3xl font-bold font-space text-gray-900">Our Mission</h3>
               </div>
               <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                To empower businesses with innovative digital solutions that drive growth, enhance efficiency, and create meaningful connections with their audiences.
+                To revolutionize how businesses operate in the digital landscape by providing innovative AI-powered solutions, exceptional design, and strategic digital marketing that drives measurable growth and sustainable success.
+              </p>
+              <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                We are committed to democratizing access to cutting-edge technology, ensuring that businesses of all sizes can leverage the power of AI and digital transformation to compete effectively in the modern marketplace.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                We are committed to delivering exceptional results through creativity, technology, and strategic thinking while maintaining the highest standards of quality and service.
+                Our mission extends beyond just delivering services – we aim to be trusted partners who understand our clients' unique challenges and provide tailored solutions that exceed expectations.
               </p>
             </div>
 
@@ -174,44 +191,49 @@ const AboutPage = () => {
                 <h3 className="text-3xl font-bold font-space text-gray-900">Our Vision</h3>
               </div>
               <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                To be the leading digital agency in India, recognized for transforming businesses through innovative AI-powered solutions and exceptional digital experiences.
+                To become the most trusted AI-first digital agency in India, setting new standards for innovation, creativity, and client success while expanding our impact globally.
+              </p>
+              <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                We envision a future where artificial intelligence seamlessly integrates with human creativity to solve complex business challenges, create extraordinary user experiences, and drive unprecedented growth for our clients.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                We envision a future where every business, regardless of size, has access to cutting-edge digital tools and strategies that enable them to thrive in the digital landscape.
+                By 2030, we aim to have transformed over 1000 businesses through our innovative solutions, establishing ATUA AGENCY as synonymous with digital excellence and forward-thinking strategies.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Values Section */}
+      {/* Ideation Process Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="animate-on-scroll">
               <h2 className="text-4xl md:text-5xl font-bold font-space text-gray-900 mb-4">
-                Our Values
+                Our Ideation
+                <span className="block" style={{ color: '#FF9F04' }}>Process</span>
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                The principles that guide everything we do
+                From concept to execution, our systematic approach ensures every project delivers exceptional results
               </p>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {ideationProcess.map((process, index) => (
               <div 
                 key={index}
-                className="animate-on-scroll text-center p-6 bg-gray-50 rounded-2xl hover:shadow-lg transition-all duration-300"
+                className="animate-on-scroll relative p-6 bg-gray-50 rounded-2xl hover:shadow-lg transition-all duration-300"
               >
-                <div className="mb-4" style={{ color: '#FF9F04' }}>
-                  {value.icon}
+                <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg"
+                     style={{ backgroundColor: '#FF9F04' }}>
+                  {process.step}
                 </div>
-                <h3 className="text-xl font-semibold mb-3 font-space text-gray-900">
-                  {value.title}
+                <h3 className="text-xl font-semibold mb-3 font-space text-gray-900 mt-4">
+                  {process.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  {value.description}
+                  {process.description}
                 </p>
               </div>
             ))}
@@ -225,32 +247,91 @@ const AboutPage = () => {
           <div className="text-center mb-16">
             <div className="animate-on-scroll">
               <h2 className="text-4xl md:text-5xl font-bold font-space text-gray-900 mb-4">
-                Meet Our Team
+                Meet Our
+                <span className="block" style={{ color: '#FF9F04' }}>Expert Team</span>
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Talented professionals passionate about delivering exceptional results
+                Passionate professionals dedicated to delivering excellence and driving your success
               </p>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {teamMembers.map((member, index) => (
               <div 
                 key={index}
-                className="animate-on-scroll text-center p-6 bg-white rounded-2xl hover:shadow-lg transition-all duration-300"
+                className="animate-on-scroll flex items-start space-x-6 p-8 bg-white rounded-2xl hover:shadow-lg transition-all duration-300"
               >
-                <div className="w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold" 
-                     style={{ backgroundColor: '#FF9F04' }}>
-                  {member.name.charAt(0)}
+                <div className="flex-shrink-0">
+                  <div className="w-16 h-16 rounded-full flex items-center justify-center text-white"
+                       style={{ backgroundColor: '#FF9F04' }}>
+                    {member.icon}
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-2 font-space text-gray-900">
-                  {member.name}
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold font-space text-gray-900 mb-2">
+                    {member.name}
+                  </h3>
+                  <p className="font-semibold mb-3" style={{ color: '#FF9F04' }}>
+                    {member.role}
+                  </p>
+                  <p className="text-gray-600 leading-relaxed">
+                    {member.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="animate-on-scroll">
+              <h2 className="text-4xl md:text-5xl font-bold font-space text-gray-900 mb-4">
+                Why Choose
+                <span className="block" style={{ color: '#FF9F04' }}>ATUA AGENCY</span>
+              </h2>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: <Heart className="w-8 h-8" />,
+                title: "Client-First Approach",
+                description: "Your success is our success. We prioritize your goals and work tirelessly to exceed expectations."
+              },
+              {
+                icon: <Lightbulb className="w-8 h-8" />,
+                title: "Innovative Solutions",
+                description: "We stay ahead of technology trends, implementing cutting-edge AI and digital solutions."
+              },
+              {
+                icon: <Award className="w-8 h-8" />,
+                title: "Proven Excellence",
+                description: "98% client satisfaction rate and 25+ successful projects speak to our commitment to quality."
+              },
+              {
+                icon: <Users className="w-8 h-8" />,
+                title: "Expert Team",
+                description: "Our diverse team brings together creativity, technical expertise, and strategic thinking."
+              }
+            ].map((value, index) => (
+              <div 
+                key={index}
+                className="animate-on-scroll text-center p-6 bg-gray-50 rounded-2xl hover:shadow-lg transition-all duration-300"
+              >
+                <div className="mb-4" style={{ color: '#FF9F04' }}>
+                  {value.icon}
+                </div>
+                <h3 className="text-xl font-semibold mb-3 font-space text-gray-900">
+                  {value.title}
                 </h3>
-                <p className="font-medium mb-3" style={{ color: '#FF9F04' }}>
-                  {member.role}
-                </p>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {member.description}
+                <p className="text-gray-600 leading-relaxed">
+                  {value.description}
                 </p>
               </div>
             ))}
