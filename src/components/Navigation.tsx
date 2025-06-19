@@ -78,10 +78,7 @@ const Navigation = () => {
             <Link 
               to="/contact"
               onClick={handleNavClick}
-              className="text-white px-6 py-2 rounded-full transition-colors duration-200"
-              style={{ backgroundColor: '#FF9F04' }}
-              onMouseEnter={(e) => e.target.style.backgroundColor = '#e8900a'}
-              onMouseLeave={(e) => e.target.style.backgroundColor = '#FF9F04'}
+              className="bg-[#FF9F04] hover:bg-[#e8900a] text-white px-6 py-2 rounded-full transition-colors duration-200"
             >
               Get Started
             </Link>
@@ -118,10 +115,7 @@ const Navigation = () => {
               ))}
               <Link 
                 to="/contact"
-                className="block w-full text-left px-3 py-2 text-white rounded-md transition-colors duration-200"
-                style={{ backgroundColor: '#FF9F04' }}
-                onMouseEnter={(e) => e.target.style.backgroundColor = '#e8900a'}
-                onMouseLeave={(e) => e.target.style.backgroundColor = '#FF9F04'}
+                className="block w-full text-left px-3 py-2 bg-[#FF9F04] hover:bg-[#e8900a] text-white rounded-md transition-colors duration-200"
                 onClick={handleNavClick}
               >
                 Get Started

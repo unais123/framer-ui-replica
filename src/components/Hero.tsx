@@ -40,10 +40,7 @@ const Hero = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <button 
-              className="text-white px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 flex items-center gap-2 group"
-              style={{ backgroundColor: '#FF9F04' }}
-              onMouseEnter={(e) => e.target.style.backgroundColor = '#e8900a'}
-              onMouseLeave={(e) => e.target.style.backgroundColor = '#FF9F04'}
+              className="bg-[#FF9F04] hover:bg-[#e8900a] text-white px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 flex items-center gap-2 group"
             >
               Start Your Project
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-200" />

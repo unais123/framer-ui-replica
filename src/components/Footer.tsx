@@ -37,12 +37,7 @@ const Footer = () => {
                 <a
                   key={index}
                   href={social.href}
-                  className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center transition-colors duration-200"
-                  style={{
-                    ':hover': { backgroundColor: '#FF9F04' }
-                  }}
-                  onMouseEnter={(e) => e.target.style.backgroundColor = '#FF9F04'}
-                  onMouseLeave={(e) => e.target.style.backgroundColor = '#374151'}
+                  className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center transition-colors duration-200 hover:bg-[#FF9F04]"
                   aria-label={social.name}
                   target={social.href.startsWith('http') ? '_blank' : '_self'}
                   rel={social.href.startsWith('http') ? 'noopener noreferrer' : undefined}
@@ -89,16 +84,10 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:border-transparent text-white placeholder-gray-400"
-                style={{ '--tw-ring-color': '#FF9F04' }}
-                onFocus={(e) => e.target.style.borderColor = '#FF9F04'}
-                onBlur={(e) => e.target.style.borderColor = '#374151'}
+                className="flex-1 px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-[#FF9F04] focus:border-[#FF9F04] text-white placeholder-gray-400"
               />
               <button 
-                className="text-white px-6 py-3 rounded-lg transition-colors duration-200 font-medium"
-                style={{ backgroundColor: '#FF9F04' }}
-                onMouseEnter={(e) => e.target.style.backgroundColor = '#e8900a'}
-                onMouseLeave={(e) => e.target.style.backgroundColor = '#FF9F04'}
+                className="bg-[#FF9F04] hover:bg-[#e8900a] text-white px-6 py-3 rounded-lg transition-colors duration-200 font-medium"
               >
                 Subscribe
               </button>
@@ -120,9 +109,7 @@ const Footer = () => {
             </a>
             <button
               onClick={scrollToTop}
-              className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center transition-colors duration-200"
-              onMouseEnter={(e) => e.target.style.backgroundColor = '#FF9F04'}
-              onMouseLeave={(e) => e.target.style.backgroundColor = '#374151'}
+              className="w-10 h-10 bg-gray-800 hover:bg-[#FF9F04] rounded-full flex items-center justify-center transition-colors duration-200"
               aria-label="Scroll to top"
             >
               <ArrowUp className="w-5 h-5" />
