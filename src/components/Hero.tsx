@@ -17,8 +17,8 @@ const Hero = () => {
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-50 to-white">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full opacity-10 animate-float"></div>
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-yellow-500 to-orange-500 rounded-full opacity-10 animate-float" style={{animationDelay: '1s'}}></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br opacity-10 animate-float rounded-full" style={{ background: 'linear-gradient(to bottom right, #FF9F04, #e8900a)' }}></div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr opacity-10 animate-float rounded-full" style={{ background: 'linear-gradient(to top right, #FF9F04, #e8900a)', animationDelay: '1s' }}></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
@@ -26,7 +26,7 @@ const Hero = () => {
           {/* Main Heading */}
           <h1 className="text-3xl md:text-6xl font-bold font-space mb-6 pt-8">
             <span className="block">We Create</span>
-            <span className="text-yellow-gradient inline-block transition-all duration-500 ease-in-out">
+            <span className="inline-block transition-all duration-500 ease-in-out" style={{ background: 'linear-gradient(135deg, #FF9F04 0%, #e8900a 100%)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
               {texts[currentText]}
             </span>
             <span className="block">Experiences</span>
@@ -39,7 +39,12 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <button className="bg-yellow-600 text-white px-8 py-4 rounded-full hover:bg-yellow-700 transition-all duration-300 transform hover:scale-105 flex items-center gap-2 group">
+            <button 
+              className="text-white px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 flex items-center gap-2 group"
+              style={{ backgroundColor: '#FF9F04' }}
+              onMouseEnter={(e) => e.target.style.backgroundColor = '#e8900a'}
+              onMouseLeave={(e) => e.target.style.backgroundColor = '#FF9F04'}
+            >
               Start Your Project
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-200" />
             </button>

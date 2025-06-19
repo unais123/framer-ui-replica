@@ -57,13 +57,13 @@ const Services = ({ isHomePage = false }: ServicesProps) => {
     },
     {
       icon: <Palette className="w-8 h-8" />,
-      title: "Social Media Handling",
-      description: "Professional social media management, content creation, and community engagement to grow your online presence."
+      title: "Search Engine Optimization",
+      description: "Professional SEO strategies to improve your website's visibility and ranking on search engines to drive organic traffic."
     },
     {
       icon: <Camera className="w-8 h-8" />,
-      title: "Product Photography",
-      description: "High-quality product photography that showcases your products in the best light for marketing and e-commerce."
+      title: "Product Photography & Video Production",
+      description: "High-quality product photography and video production that showcases your products in the best light for marketing and e-commerce."
     }
   ];
 
@@ -73,8 +73,8 @@ const Services = ({ isHomePage = false }: ServicesProps) => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="animate-on-scroll">
-            <h2 className="text-4xl md:text-5xl font-bold font-space mb-4 text-gray-900">
-              <span style={{ color: '#FF9F04' }}>OUR</span> SERVICES
+            <h2 className="text-4xl md:text-5xl font-bold font-space mb-4">
+              <span className="text-black">Our</span> <span style={{ color: '#FF9F04' }}>Services</span>
             </h2>
           </div>
         </div>

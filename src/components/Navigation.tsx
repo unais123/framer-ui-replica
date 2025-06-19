@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
@@ -23,7 +24,6 @@ const Navigation = () => {
 
   const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
     { name: 'Work', href: '/work' },
     { name: 'Testimonials', href: '/testimonials' },
     { name: 'Contact', href: '/contact' },
@@ -63,9 +63,10 @@ const Navigation = () => {
                 onClick={handleNavClick}
                 className={`transition-colors duration-200 font-medium ${
                   isActive(item.href) 
-                    ? 'text-gray-900 border-b-2 border-yellow-600' 
+                    ? 'text-gray-900 border-b-2' 
                     : 'text-gray-700 hover:text-gray-900'
                 }`}
+                style={isActive(item.href) ? { borderBottomColor: '#FF9F04' } : {}}
               >
                 {item.name}
               </Link>
@@ -77,7 +78,10 @@ const Navigation = () => {
             <Link 
               to="/contact"
               onClick={handleNavClick}
-              className="bg-yellow-600 text-white px-6 py-2 rounded-full hover:bg-yellow-700 transition-colors duration-200"
+              className="text-white px-6 py-2 rounded-full transition-colors duration-200"
+              style={{ backgroundColor: '#FF9F04' }}
+              onMouseEnter={(e) => e.target.style.backgroundColor = '#e8900a'}
+              onMouseLeave={(e) => e.target.style.backgroundColor = '#FF9F04'}
             >
               Get Started
             </Link>
@@ -114,7 +118,10 @@ const Navigation = () => {
               ))}
               <Link 
                 to="/contact"
-                className="block w-full text-left px-3 py-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-700 transition-colors duration-200"
+                className="block w-full text-left px-3 py-2 text-white rounded-md transition-colors duration-200"
+                style={{ backgroundColor: '#FF9F04' }}
+                onMouseEnter={(e) => e.target.style.backgroundColor = '#e8900a'}
+                onMouseLeave={(e) => e.target.style.backgroundColor = '#FF9F04'}
                 onClick={handleNavClick}
               >
                 Get Started
