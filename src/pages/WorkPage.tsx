@@ -1,7 +1,7 @@
+
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import Portfolio from '../components/Portfolio';
-import ChatBot from '../components/ChatBot';
 
 const WorkPage = () => {
   return (
@@ -27,7 +27,6 @@ const WorkPage = () => {
       <Portfolio />
 
       <Footer />
-      <ChatBot />
     </div>
   );
 };
