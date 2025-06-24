@@ -1,8 +1,11 @@
-import { useEffect, useRef } from 'react';
+
+import { useEffect, useRef, useState } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 
 const Contact = () => {
   const sectionRef = useRef<HTMLElement>(null);
+  const [selectedService, setSelectedService] = useState('');
+  const [customRequirement, setCustomRequirement] = useState('');
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -49,6 +52,16 @@ const Contact = () => {
     }
   ];
 
+  const services = [
+    "Web Designing & Development",
+    "AI Automation",
+    "Branding",
+    "Digital Marketing",
+    "Search Engine Optimization",
+    "Product Photography & Video Production",
+    "Custom"
+  ];
+
   return (
     <section ref={sectionRef} id="contact" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -57,7 +70,7 @@ const Contact = () => {
           <div className="animate-on-scroll">
             <h2 className="text-4xl md:text-5xl font-bold font-space mb-6">
               Get In
-              <span className="text-yellow-gradient block">Touch</span>
+              <span className="text-transparent bg-gradient-to-r from-[#FF9F04] to-[#e8900a] bg-clip-text block">Touch</span>
             </h2>
           </div>
           <div className="animate-on-scroll">
@@ -85,7 +98,7 @@ const Contact = () => {
                   key={index}
                   className="animate-on-scroll flex items-start gap-4 p-6 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300"
                 >
-                  <div className="text-yellow-600 mt-1">
+                  <div className="text-[#FF9F04] mt-1">
                     {info.icon}
                   </div>
                   <div>
@@ -103,7 +116,7 @@ const Contact = () => {
               ))}
             </div>
 
-            <div className="animate-on-scroll mt-8 p-6 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-2xl">
+            <div className="animate-on-scroll mt-8 p-6 bg-gradient-to-r from-orange-50 to-yellow-50 rounded-2xl">
               <h4 className="font-semibold text-gray-900 mb-2">
                 Business Hours
               </h4>
@@ -126,7 +139,7 @@ const Contact = () => {
                   <input
                     type="text"
                     id="firstName"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-colors duration-200"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FF9F04] focus:border-transparent transition-colors duration-200"
                     placeholder="John"
                   />
                 </div>
@@ -137,7 +150,7 @@ const Contact = () => {
                   <input
                     type="text"
                     id="lastName"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-colors duration-200"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FF9F04] focus:border-transparent transition-colors duration-200"
                     placeholder="Doe"
                   />
                 </div>
@@ -150,7 +163,7 @@ const Contact = () => {
                 <input
                   type="email"
                   id="email"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-colors duration-200"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FF9F04] focus:border-transparent transition-colors duration-200"
                   placeholder="john@example.com"
                 />
               </div>
@@ -161,16 +174,32 @@ const Contact = () => {
                 </label>
                 <select
                   id="service"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-colors duration-200"
+                  value={selectedService}
+                  onChange={(e) => setSelectedService(e.target.value)}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FF9F04] focus:border-transparent transition-colors duration-200"
                 >
                   <option value="">Select a service</option>
-                  <option value="web-development">Web Development</option>
-                  <option value="mobile-development">Mobile Development</option>
-                  <option value="brand-design">Brand Design</option>
-                  <option value="digital-marketing">Digital Marketing</option>
-                  <option value="consultation">Consultation</option>
+                  {services.map((service) => (
+                    <option key={service} value={service}>{service}</option>
+                  ))}
                 </select>
               </div>
+
+              {selectedService === 'Custom' && (
+                <div className="mb-6">
+                  <label htmlFor="customRequirement" className="block text-sm font-medium text-gray-700 mb-2">
+                    Please describe your custom requirement
+                  </label>
+                  <textarea
+                    id="customRequirement"
+                    rows={3}
+                    value={customRequirement}
+                    onChange={(e) => setCustomRequirement(e.target.value)}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FF9F04] focus:border-transparent transition-colors duration-200 resize-none"
+                    placeholder="Tell us about your specific requirements..."
+                  ></textarea>
+                </div>
+              )}
 
               <div className="mb-6">
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
@@ -179,7 +208,7 @@ const Contact = () => {
                 <textarea
                   id="message"
                   rows={5}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-colors duration-200 resize-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FF9F04] focus:border-transparent transition-colors duration-200 resize-none"
                   placeholder="Tell us about your project..."
                 ></textarea>
               </div>

@@ -5,7 +5,7 @@ import Contact from '../components/Contact';
 
 const ContactPage = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen font-inter">
       <Navigation />
       
       {/* Hero Section */}
@@ -14,7 +14,7 @@ const ContactPage = () => {
           <div className="text-center animate-fade-in">
             <h1 className="text-5xl md:text-6xl font-bold font-space mb-6">
               Get In
-              <span className="text-yellow-gradient block">Touch</span>
+              <span className="text-transparent bg-gradient-to-r from-[#FF9F04] to-[#e8900a] bg-clip-text block">Touch</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Ready to bring your vision to life? Let's start a conversation about your next project.

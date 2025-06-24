@@ -17,8 +17,8 @@ const Hero = () => {
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-50 to-white">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br opacity-10 animate-float rounded-full" style={{ background: 'linear-gradient(to bottom right, #FF9F04, #e8900a)' }}></div>
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr opacity-10 animate-float rounded-full" style={{ background: 'linear-gradient(to top right, #FF9F04, #e8900a)', animationDelay: '1s' }}></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-[#FF9F04] to-[#e8900a] opacity-10 animate-float rounded-full"></div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-[#FF9F04] to-[#e8900a] opacity-10 animate-float rounded-full" style={{animationDelay: '1s'}}></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
@@ -26,7 +26,7 @@ const Hero = () => {
           {/* Main Heading */}
           <h1 className="text-3xl md:text-6xl font-bold font-space mb-6 pt-8">
             <span className="block">We Create</span>
-            <span className="inline-block transition-all duration-500 ease-in-out" style={{ background: 'linear-gradient(135deg, #FF9F04 0%, #e8900a 100%)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+            <span className="inline-block transition-all duration-500 ease-in-out text-transparent bg-gradient-to-r from-[#FF9F04] to-[#e8900a] bg-clip-text">
               {texts[currentText]}
             </span>
             <span className="block">Experiences</span>
@@ -45,12 +45,17 @@ const Hero = () => {
               Start Your Project
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-200" />
             </button>
-            <button className="flex items-center gap-2 text-gray-700 hover:text-gray-900 transition-colors duration-200 px-8 py-4">
+            <a 
+              href="https://www.instagram.com/atua_agency/?hl=en"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-gray-700 hover:text-gray-900 transition-colors duration-200 px-8 py-4"
+            >
               <div className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:shadow-xl transition-shadow duration-200">
                 <Play size={16} className="ml-1" />
               </div>
               Watch Our Story
-            </button>
+            </a>
           </div>
 
           {/* Stats */}

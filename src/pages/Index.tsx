@@ -9,7 +9,7 @@ import Footer from '../components/Footer';
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen font-inter">
       <Navigation />
       <Hero />
       <About />
@@ -29,8 +29,7 @@ const Index = () => {
             </p>
             <a 
               href="/contact"
-              className="inline-block px-8 py-4 rounded-full text-white transition-all duration-300 transform hover:scale-105 font-medium hover:bg-[#e8900a]"
-              style={{ backgroundColor: '#FF9F04' }}
+              className="inline-block bg-[#FF9F04] hover:bg-[#e8900a] text-white px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 font-medium"
             >
               Get Started Today
             </a>
