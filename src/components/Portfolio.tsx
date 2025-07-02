@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from 'react';
 import { ExternalLink, Github, Calendar, Users, Award } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
@@ -208,15 +209,17 @@ const Portfolio = ({ isHomePage = false }: PortfolioProps) => {
     }
   ];
 
-  // For home page, only show the first 3 projects (which excludes the ones we don't want)
+  // For home page, only show the first 3 projects
   const homePageProjects = isHomePage ? projects.slice(0, 3) : projects;
 
-  // Apply filter for work page
-  const filteredProjects = !isHomePage && activeFilter !== "All" 
-    ? projects.filter(project => project.category === activeFilter)
-    : projects;
+  // Apply filter for work page - this is the key fix
+  const filteredProjects = isHomePage 
+    ? homePageProjects 
+    : activeFilter === "All" 
+      ? projects 
+      : projects.filter(project => project.category === activeFilter);
 
-  const displayedProjects = isHomePage ? homePageProjects : filteredProjects;
+  const displayedProjects = filteredProjects;
 
   const openProjectDialog = (project: any) => {
     setSelectedProject(project);
