@@ -7,6 +7,7 @@ interface ProjectCardProps {
     image: string;
     technologies: string[];
     featured: boolean;
+    isVideo?: boolean;
   };
   onClick: () => void;
   isHomePage?: boolean;
@@ -20,13 +21,24 @@ const ProjectCard = ({ project, onClick, isHomePage = false }: ProjectCardProps)
         project.featured && !isHomePage ? 'md:col-span-2 lg:col-span-1' : ''
       }`}
     >
-      {/* Project Image */}
+      {/* Project Image/Video */}
       <div className="relative overflow-hidden">
-        <img 
-          src={project.image} 
-          alt={project.title}
-          className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-        />
+        {project.isVideo ? (
+          <video 
+            src={project.image} 
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+          />
+        ) : (
+          <img 
+            src={project.image} 
+            alt={project.title}
+            className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+          />
+        )}
         <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
       </div>
 

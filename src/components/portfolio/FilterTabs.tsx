@@ -6,6 +6,14 @@ interface FilterTabsProps {
 }
 
 const FilterTabs = ({ filters, activeFilter, onFilterChange }: FilterTabsProps) => {
+  const handleFilterClick = (filter: string) => {
+    if (filter === "All") {
+      window.location.reload();
+    } else {
+      onFilterChange(filter);
+    }
+  };
+
   return (
     <div className="animate-on-scroll mb-12">
       {/* Desktop Filter Tabs */}
@@ -14,7 +22,7 @@ const FilterTabs = ({ filters, activeFilter, onFilterChange }: FilterTabsProps) 
           {filters.map((filter) => (
             <button
               key={filter}
-              onClick={() => onFilterChange(filter)}
+              onClick={() => handleFilterClick(filter)}
               className={`px-6 py-2 rounded-full transition-all duration-200 ${
                 filter === activeFilter 
                   ? "bg-black text-white" 
@@ -33,7 +41,7 @@ const FilterTabs = ({ filters, activeFilter, onFilterChange }: FilterTabsProps) 
           {filters.map((filter) => (
             <button
               key={filter}
-              onClick={() => onFilterChange(filter)}
+              onClick={() => handleFilterClick(filter)}
               className={`relative overflow-hidden rounded-lg p-3 text-center transition-all duration-300 transform hover:scale-105 ${
                 filter === activeFilter 
                   ? "bg-black text-white shadow-lg" 

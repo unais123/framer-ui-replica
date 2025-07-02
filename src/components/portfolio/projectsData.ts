@@ -1,4 +1,3 @@
-
 export const projects = [
   {
     title: "E-Commerce Platform",
@@ -60,7 +59,8 @@ export const projects = [
     title: "Fitness Tracking App",
     category: "AI Automation",
     description: "Comprehensive fitness app with workout tracking, nutrition planning, and social features.",
-    image: "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "https://videos.pexels.com/video-files/5319654/5319654-uhd_2560_1440_30fps.mp4",
+    isVideo: true,
     additionalImages: [
       "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1594737625785-a6cbdabd333c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
