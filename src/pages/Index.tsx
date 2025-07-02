@@ -18,7 +18,7 @@ const Index = () => {
       <FAQ />
       
       {/* CTA Section - moved here after FAQ */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="animate-on-scroll">
             <h2 className="text-4xl md:text-5xl font-bold font-space text-gray-900 mb-6">

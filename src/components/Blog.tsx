@@ -6,47 +6,83 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  // Mock blog posts - in a real app, this would come from n8n/Supabase
+  // Blog posts related to our services
   const blogPosts = [
     {
       id: 1,
-      title: "The Future of AI in Web Development",
-      excerpt: "Exploring how artificial intelligence is revolutionizing the way we build and design websites.",
-      content: "Artificial Intelligence is transforming web development in unprecedented ways...",
+      title: "The Future of AI Automation in Business",
+      excerpt: "Discover how AI automation is transforming businesses and how you can leverage it to streamline your operations and boost productivity.",
+      content: "Artificial Intelligence automation is revolutionizing how businesses operate...",
       author: "ATUA Team",
       date: "2024-01-15",
-      category: "AI & Technology",
+      category: "AI Automation",
       image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       readTime: "5 min read",
-      tags: ["AI", "Web Development", "Technology"]
+      tags: ["AI", "Automation", "Business"]
     },
     {
       id: 2,
-      title: "Design Trends That Will Define 2024",
-      excerpt: "A comprehensive look at the design trends that are shaping the digital landscape this year.",
-      content: "As we move through 2024, several design trends are emerging...",
+      title: "Modern Web Design Trends That Convert",
+      excerpt: "Explore the latest web design trends that not only look great but also drive conversions and improve user experience.",
+      content: "In today's digital landscape, web design goes beyond aesthetics...",
       author: "Design Team",
       date: "2024-01-10",
-      category: "Design",
-      image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      category: "Web Development",
+      image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       readTime: "7 min read",
-      tags: ["Design", "Trends", "UI/UX"]
+      tags: ["Web Design", "UX/UI", "Conversions"]
     },
     {
       id: 3,
-      title: "Building Scalable Mobile Applications",
-      excerpt: "Best practices and strategies for creating mobile apps that can grow with your business.",
-      content: "Scalability is a crucial consideration when developing mobile applications...",
-      author: "Mobile Team",
+      title: "Building Your Brand Identity: A Complete Guide",
+      excerpt: "Learn how to create a strong brand identity that resonates with your audience and sets you apart from the competition.",
+      content: "Brand identity is more than just a logo and colors...",
+      author: "Branding Team",
       date: "2024-01-05",
-      category: "Mobile Development",
-      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      category: "Branding",
+      image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       readTime: "6 min read",
-      tags: ["Mobile", "Development", "Scalability"]
+      tags: ["Branding", "Identity", "Marketing"]
+    },
+    {
+      id: 4,
+      title: "Digital Marketing Strategies That Work",
+      excerpt: "Effective digital marketing strategies to grow your online presence and reach your target audience in 2024.",
+      content: "Digital marketing continues to evolve rapidly...",
+      author: "Marketing Team",
+      date: "2024-01-03",
+      category: "Digital Marketing",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      readTime: "8 min read",
+      tags: ["Digital Marketing", "SEO", "Social Media"]
+    },
+    {
+      id: 5,
+      title: "SEO Best Practices for 2024",
+      excerpt: "Stay ahead of the curve with the latest SEO strategies and techniques to improve your search engine rankings.",
+      content: "Search Engine Optimization remains crucial for online visibility...",
+      author: "SEO Team",
+      date: "2024-01-01",
+      category: "SEO",
+      image: "https://images.unsplash.com/photo-1432888622747-4eb9a8a2c293?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      readTime: "6 min read",
+      tags: ["SEO", "Google", "Rankings"]
+    },
+    {
+      id: 6,
+      title: "Product Photography That Sells",
+      excerpt: "Professional tips and techniques for product photography that captures attention and drives sales.",
+      content: "Great product photography is essential for e-commerce success...",
+      author: "Photography Team",
+      date: "2023-12-28",
+      category: "Photography",
+      image: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      readTime: "5 min read",
+      tags: ["Photography", "E-commerce", "Products"]
     }
   ];
 
-  const categories = ["All", "AI & Technology", "Design", "Mobile Development", "Marketing"];
+  const categories = ["All", "AI Automation", "Web Development", "Branding", "Digital Marketing", "SEO", "Photography"];
 
   const filteredPosts = selectedCategory === "All" 
     ? blogPosts 
@@ -63,7 +99,7 @@ const Blog = () => {
               onClick={() => setSelectedCategory(category)}
               className={`px-6 py-2 rounded-full transition-all duration-200 ${
                 selectedCategory === category
-                  ? "bg-black text-white"
+                  ? "bg-[#FF9F04] text-white"
                   : "bg-gray-100 text-gray-600 hover:bg-gray-200"
               }`}
             >
@@ -83,7 +119,7 @@ const Blog = () => {
                   className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute top-4 left-4">
-                  <span className="bg-black text-white px-3 py-1 rounded-full text-xs font-medium">
+                  <span className="bg-[#FF9F04] text-white px-3 py-1 rounded-full text-xs font-medium">
                     {post.category}
                   </span>
                 </div>
@@ -100,7 +136,7 @@ const Blog = () => {
                     {new Date(post.date).toLocaleDateString()}
                   </div>
                 </div>
-                <CardTitle className="text-xl group-hover:text-yellow-600 transition-colors duration-200">
+                <CardTitle className="text-xl group-hover:text-[#FF9F04] transition-colors duration-200">
                   {post.title}
                 </CardTitle>
                 <CardDescription className="text-gray-600 leading-relaxed">
@@ -128,18 +164,21 @@ const Blog = () => {
           ))}
         </div>
 
-        {/* N8N Integration Notice */}
+        {/* Services CTA */}
         <div className="mt-16 text-center">
-          <div className="bg-gray-50 rounded-2xl p-8">
+          <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8">
             <h3 className="text-2xl font-semibold mb-4 font-space">
-              Content Management
+              Ready to Get Started?
             </h3>
             <p className="text-gray-600 mb-6">
-              This blog is powered by n8n automation workflows for seamless content management and publishing.
+              Transform your business with our comprehensive digital services. From web development to AI automation, we've got you covered.
             </p>
-            <div className="text-sm text-gray-500">
-              To enable full n8n integration, please connect your Supabase backend for secure API handling.
-            </div>
+            <a 
+              href="/contact"
+              className="inline-block bg-[#FF9F04] hover:bg-[#e8900a] text-white px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 font-medium"
+            >
+              Start Your Project
+            </a>
           </div>
         </div>
       </div>
