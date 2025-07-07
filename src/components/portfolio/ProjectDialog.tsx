@@ -9,6 +9,7 @@ interface ProjectDialogProps {
     title: string;
     category: string;
     image: string;
+    videoUrl?: string;
     additionalImages: string[];
     fullDescription: string;
     duration: string;
@@ -39,13 +40,26 @@ const ProjectDialog = ({ isOpen, onClose, project }: ProjectDialogProps) => {
         </DialogHeader>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
-          {/* Project Images */}
+          {/* Project Images/Video */}
           <div className="space-y-4">
-            <img 
-              src={project.image} 
-              alt={project.title}
-              className="w-full h-64 object-cover rounded-lg"
-            />
+            {/* Main Image/Video */}
+            {project.videoUrl ? (
+              <video 
+                src={project.videoUrl} 
+                autoPlay
+                loop
+                muted
+                playsInline
+                controls
+                className="w-full h-64 object-cover rounded-lg"
+              />
+            ) : (
+              <img 
+                src={project.image} 
+                alt={project.title}
+                className="w-full h-64 object-cover rounded-lg"
+              />
+            )}
             
             {/* Additional Images */}
             <div className="grid grid-cols-2 gap-3">
