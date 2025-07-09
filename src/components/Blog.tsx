@@ -1,13 +1,31 @@
-
 import { useState } from 'react';
-import { Calendar, User, ArrowRight, Tag } from 'lucide-react';
+import { Calendar, User, ArrowRight, Tag, Settings } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import WebhookManager from './WebhookManager';
+import { useWebhookEndpoint } from '../hooks/useWebhookEndpoint';
+
+interface BlogPost {
+  id: number;
+  title: string;
+  excerpt: string;
+  content: string;
+  author: string;
+  date: string;
+  category: string;
+  image: string;
+  readTime: string;
+  tags: string[];
+}
 
 const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [showWebhookManager, setShowWebhookManager] = useState(false);
 
-  // Blog posts related to our services
-  const blogPosts = [
+  // Initialize webhook endpoint
+  useWebhookEndpoint();
+
+  // Initial blog posts
+  const [blogPosts, setBlogPosts] = useState<BlogPost[]>([
     {
       id: 1,
       title: "The Future of AI Automation in Business",
@@ -80,9 +98,13 @@ const Blog = () => {
       readTime: "5 min read",
       tags: ["Photography", "E-commerce", "Products"]
     }
-  ];
+  ]);
 
-  const categories = ["All", "AI Automation", "Web Development", "Branding", "Digital Marketing", "SEO", "Photography"];
+  const handleNewPost = (newPost: BlogPost) => {
+    setBlogPosts(prevPosts => [newPost, ...prevPosts]);
+  };
+
+  const categories = ["All", "AI Automation", "Web Development", "Branding", "Digital Marketing", "SEO", "Photography", "Automation"];
 
   const filteredPosts = selectedCategory === "All" 
     ? blogPosts 
@@ -91,6 +113,24 @@ const Blog = () => {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Webhook Management Toggle */}
+        <div className="flex justify-end mb-8">
+          <button
+            onClick={() => setShowWebhookManager(!showWebhookManager)}
+            className="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors text-sm"
+          >
+            <Settings size={16} />
+            {showWebhookManager ? 'Hide' : 'Show'} Webhook Settings
+          </button>
+        </div>
+
+        {/* Webhook Manager */}
+        {showWebhookManager && (
+          <div className="mb-8">
+            <WebhookManager onNewPost={handleNewPost} />
+          </div>
+        )}
+
         {/* Category Filter */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           {categories.map((category) => (
