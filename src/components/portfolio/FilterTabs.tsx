@@ -1,4 +1,5 @@
 
+
 interface FilterTabsProps {
   filters: string[];
   activeFilter: string;
@@ -7,11 +8,7 @@ interface FilterTabsProps {
 
 const FilterTabs = ({ filters, activeFilter, onFilterChange }: FilterTabsProps) => {
   const handleFilterClick = (filter: string) => {
-    if (filter === "All") {
-      window.location.reload();
-    } else {
-      onFilterChange(filter);
-    }
+    onFilterChange(filter);
   };
 
   return (
@@ -67,3 +64,4 @@ const FilterTabs = ({ filters, activeFilter, onFilterChange }: FilterTabsProps) 
 };
 
 export default FilterTabs;
+

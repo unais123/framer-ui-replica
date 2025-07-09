@@ -6,6 +6,7 @@ import Services from '../components/Services';
 import AIAutomation from '../components/AIAutomation';
 import FAQ from '../components/FAQ';
 import Footer from '../components/Footer';
+import ChatBot from '../components/ChatBot';
 
 const Index = () => {
   return (
@@ -52,8 +53,10 @@ const Index = () => {
       </section>
       
       <Footer />
+      <ChatBot />
     </div>
   );
 };
 
 export default Index;
+

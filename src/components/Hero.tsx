@@ -14,7 +14,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-50 to-white">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-50 to-white pt-20">
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-[#FF9F04] to-[#e8900a] opacity-10 animate-float rounded-full"></div>
@@ -27,8 +27,8 @@ const Hero = () => {
         <div className="animate-fade-in">
           {/* Main Heading with enhanced animations */}
           <h1 className="text-3xl md:text-6xl font-bold font-space mb-6 pt-8">
-            <span className="block animate-slide-in-left">We Create</span>
-            <span className="inline-block transition-all duration-500 ease-in-out text-transparent bg-gradient-to-r from-[#FF9F04] to-[#e8900a] bg-clip-text animate-scale-in" style={{animationDelay: '0.3s'}}>
+            <span className="block animate-slide-in-left mb-4">We Create</span>
+            <span className="inline-block transition-all duration-500 ease-in-out text-transparent bg-gradient-to-r from-[#FF9F04] to-[#e8900a] bg-clip-text animate-scale-in mb-4" style={{animationDelay: '0.3s'}}>
               {texts[currentText]}
             </span>
             <span className="block animate-slide-in-left" style={{animationDelay: '0.6s'}}>Experiences</span>
@@ -88,3 +88,4 @@ const Hero = () => {
 };
 
 export default Hero;
+
